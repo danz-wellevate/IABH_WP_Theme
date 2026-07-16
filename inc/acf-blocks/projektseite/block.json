@@ -1,0 +1,26 @@
+{
+  "name": "acf/projektseite",
+  "title": "Projektseite",
+  "description": "Projektseite block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "projektseite"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/projektseite/projektseite.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/projektseite/preview.jpg"
+      }
+    }
+  }
+}

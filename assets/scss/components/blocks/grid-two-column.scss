@@ -1,0 +1,133 @@
+/* Grid Two Column Block Styles */
+.block--custom-layout__grid-two-column {
+  padding-bottom: 100px;
+  @include padding-bottom;
+
+  .section-header {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: $dark-sapphire;
+      margin-bottom: 30px;
+    }
+    p {
+      color: $dark-sapphire;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .key-pointer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      gap: 10px;
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+      grid-template-columns: 1fr;
+    }
+
+    .key-pointer__item {
+      display: flex;                  // ← flex instead of subgrid
+      flex-direction: column;
+      justify-content: flex-start;
+
+      background-color: $light-grey;
+      padding: 30px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+
+      @media (max-width: $vp-tabletLandscape) {
+        padding: 20px;
+      }
+
+      .key-pointer__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        border-bottom-left-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 30px;
+          height: 30px;
+          flex-shrink: 0;
+        }
+
+        @media (max-width: $vp-tabletPortrait) {
+          height: 50px;
+          width: 50px;
+          padding: 0;
+
+          svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 15px;
+          width: 45px;
+          height: 45px;
+        }
+      }
+
+      // ← NO display:contents — just a normal flex column
+      .key-pointer__text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+
+        p, h3, div {
+          color: $dark-sapphire;
+        }
+
+        p {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-right: 80px;
+          @include typography(20px, 700, 30px, $font-primary);
+
+          @media (max-width: $vp-tabletPortrait) {
+            @include typography(16px, 700, 26px, $font-primary);
+            padding-right: 70px;
+
+            br {
+              display: contents;
+            }
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(14px, 700, 24px, $font-primary);
+            padding-right: 70px;
+          }
+        }
+      }
+
+      &:last-child {
+        .key-pointer__text {
+          h3 {
+            @media (max-width: $vp-tabletPortrait) {
+              padding-right: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

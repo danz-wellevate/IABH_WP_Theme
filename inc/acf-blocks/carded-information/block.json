@@ -1,0 +1,26 @@
+{
+  "name": "acf/carded-information",
+  "title": "Carded Information",
+  "description": "Carded Information block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "carded-information"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/carded-information/carded-information.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/carded-information/preview.jpg"
+      }
+    }
+  }
+}

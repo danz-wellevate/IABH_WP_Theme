@@ -1,0 +1,22 @@
+/* News Cta Block Styles */
+.block--custom-layout__news-cta {
+  padding-bottom: 100px;
+  @include padding-bottom;
+
+  .section-header-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      color: $dark-sapphire;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .cta-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}

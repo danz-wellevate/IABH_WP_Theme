@@ -1,0 +1,26 @@
+{
+  "name": "acf/accordion-tabs",
+  "title": "Accordion Tabs",
+  "description": "Accordion Tabs block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "accordion-tabs"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/accordion-tabs/accordion-tabs.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/accordion-tabs/preview.jpg"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "acf/hero-banner",
+  "title": "Hero Banner",
+  "description": "Hero Banner block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "hero-banner"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/hero-banner/hero-banner.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/hero-banner/preview.jpg"
+      }
+    }
+  }
+}

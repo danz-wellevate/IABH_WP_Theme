@@ -1,0 +1,12 @@
+/* Full Width Image Block Styles */
+.block--custom-layout__full-width-image {
+  padding-top: 100px;
+  @include padding-top;
+  position: relative;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}

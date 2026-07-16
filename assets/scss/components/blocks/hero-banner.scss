@@ -1,0 +1,58 @@
+/* Hero Banner Block Styles */
+.block--custom-layout__hero-banner {
+  position: relative;
+
+  &.focus-right {
+    .hero-banner-bg {
+      @media (max-width: $vp-mobileLandscape) {
+        background-repeat: no-repeat;
+        background-position: right -300px center !important;
+      }
+    }
+  }
+
+  .hero-banner-bg {
+    background-size: cover;
+    background-position: top;
+    height: 500px;
+    position: relative;
+
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-height: 140px;
+      padding: 30px 0;
+      background-color: #24356d;
+      border-top-right-radius: 50px;
+      display: flex;
+      align-items: center;
+
+      @media (max-width: $vp-tabletLandscape) {
+        min-height: auto;
+      }
+
+      .container {
+        width: 100%;
+        h2 {
+          @include typography(30px, 700, 40px, $font-secondary);
+
+          @media (max-width: $vp-tabletPortrait) {
+            @include typography(28px, 700, 38px, $font-secondary);
+            br {
+              display: contents;
+            }
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(18px, 700, 28px, $font-secondary);
+          }
+          color: #fff;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

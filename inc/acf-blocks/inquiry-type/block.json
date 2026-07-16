@@ -1,0 +1,26 @@
+{
+  "name": "acf/inquiry-type",
+  "title": "Inquiry Type",
+  "description": "Inquiry Type block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "inquiry-type"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/inquiry-type/inquiry-type.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/inquiry-type/preview.jpg"
+      }
+    }
+  }
+}

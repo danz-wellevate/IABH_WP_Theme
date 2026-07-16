@@ -1,0 +1,26 @@
+{
+  "name": "acf/exhibit",
+  "title": "Exhibit",
+  "description": "Exhibit block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "exhibit"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/exhibit/exhibit.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/exhibit/preview.jpg"
+      }
+    }
+  }
+}

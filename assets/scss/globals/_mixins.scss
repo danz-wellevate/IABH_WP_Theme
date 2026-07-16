@@ -1,0 +1,103 @@
+@mixin typography($size, $weight: normal, $line-height: 1.4, $family: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-family: $family;
+}
+
+@mixin hover-bg($duration: 0.3s, $ease: ease) {
+  transition: background-color $duration $ease;
+}
+
+@mixin bg-img-props {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin inner-title {
+  @include typography(20px, 700, 30px, $font-primary);
+
+  @media (max-width: $vp-tabletPortrait) {
+    @include typography(16px, 700, 26px, $font-primary);
+  }
+
+  @media (max-width: $vp-mobileLandscape) {
+    @include typography(12px, 700, 22px, $font-primary);
+  }
+}
+
+@mixin body-font {
+  @include typography(16px, 400, 26px, $font-primary);
+
+  @media (max-width: $vp-tabletPortrait) {
+    @include typography(14px, 400, 24px, $font-primary);
+  }
+
+  @media (max-width: $vp-mobileLandscape) {
+    @include typography(12px, 400, 22px, $font-primary);
+  }
+}
+
+@mixin icon-style {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  @media (max-width: $vp-mobileLandscape) {
+    height: 50px;
+    width: 50px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media (max-width: $vp-mobilePortrait) {
+    height: 50px;
+    width: 50px;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+@mixin padding-top {
+  @media (max-width: $vp-tabletPortrait) {
+    padding-top: 80px;
+  }
+  @media (max-width: $vp-mobileLandscape) {
+    padding-top: 60px;
+  }
+}
+
+@mixin padding-bottom {
+  @media (max-width: $vp-tabletPortrait) {
+    padding-bottom: 80px;
+  }
+  @media (max-width: $vp-mobileLandscape) {
+    padding-bottom: 60px;
+  }
+}
+
+@mixin both-padding {
+  @include padding-top;
+  @include padding-bottom;
+}
+
+@mixin cf-responsive-width {
+  @media (max-width: $vp-tabletPortrait) {
+    width: 50%;
+  }
+
+  @media (max-width: $vp-mobileLandscape) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "acf/news-two-column",
+  "title": "News Two Column",
+  "description": "News Two Column block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "news-two-column"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/news-two-column/news-two-column.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/news-two-column/preview.jpg"
+      }
+    }
+  }
+}

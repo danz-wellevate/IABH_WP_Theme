@@ -1,0 +1,128 @@
+/* Grid Three Column Block Styles */
+.block--custom-layout__grid-three-column {
+  padding: 100px 0;
+  @include both-padding;
+  .section-header {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+      color: $dark-sapphire;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .key-pointer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      gap: 10px;
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+
+    .key-pointer__item {
+      background-color: $light-grey;
+      padding: 20px 30px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      @media (max-width: $vp-tabletPortrait) {
+        padding: 40px 20px;
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        padding: 20px;
+      }
+
+      .key-pointer__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 15px;
+        @include icon-style;
+
+        @media (max-width: $vp-tabletPortrait) {
+          height: 50px;
+          width: 50px;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 15px;
+
+          width: 45px;
+          height: 45px;
+        }
+
+        .custom-typography-header {
+          @include typography(30px, 700, inherit, $font-secondary);
+          color: $white;
+
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(22px, 700, inherit, $font-secondary);
+          }
+        }
+      }
+
+      .key-pointer__text {
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        @media (max-width: $vp-tabletPortrait) {
+          padding-right: 0px;
+        }
+
+        h3 {
+          color: $dark-sapphire;
+          @include typography(16px, 700, 30px, $font-primary);
+          margin-top: 0;
+          margin: 0;
+          @media (max-width: $vp-tabletPortrait) {
+            @include typography(14px, 700, 26px, $font-primary);
+            br {
+              display: contents;
+            }
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(12px, 700, 24px, $font-primary);
+          }
+        }
+      }
+    }
+  }
+
+  .information-card {
+    margin-top: 30px;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    background-color: $light-grey;
+    border-radius: 10px;
+    color: #5a5c5f;
+    .body-text {
+      margin: 0;
+    }
+    @media (max-width: $vp-tabletPortrait) {
+      margin-top: 20px;
+    }
+  }
+}

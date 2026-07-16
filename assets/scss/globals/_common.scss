@@ -1,0 +1,432 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    // may inalis lang dito.
+
+    #smooth-wrapper {
+        width: 100%;
+        #smooth-content {
+            #page-wrapper {
+                width: 100%;
+                padding-left: 315px;
+
+                @media (max-width: $vp-tabletLandscape) {
+                    padding-top: 90px;
+                    padding-left: 0; //badtrip talagaaaa
+                }
+
+                @media (max-width: $vp-mobileLandscape) {
+                    padding-top: 65px;
+                }
+            }
+        }
+    }
+
+
+    .site {
+        display: flex;
+        flex-direction: row;
+
+        .main-content {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+// Disable Padding
+.disabled-padding-top {
+    padding-top: 0 !important;
+}
+
+.disabled-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+// Lazy Load Image
+img.lazyload {
+  opacity: 0;
+}
+
+img.lazyloaded {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+.secondary-header {
+    @include typography(30px, 700, 40px, $font-primary);
+    
+    @media (max-width: $vp-tabletPortrait) {
+        @include typography(28px, 700, 30px, $font-primary);
+        br {
+            display: contents;
+        }
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+        @include typography(18px, 700, 28px, $font-primary);
+    }
+}
+
+.section-header {
+    @include typography(26px, 700, 40px, $font-primary);
+    
+    @media (max-width: $vp-tabletPortrait) {
+        @include typography(20px, 700, 30px, $font-primary);
+        br {
+            display: contents;
+        }
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+        @include typography(16px, 700, 26px, $font-primary);
+    }
+}
+
+
+.body-text {
+    @include body-font;
+    p, ul, li {
+        @include body-font;
+    }
+}
+
+.content-header {
+    @include typography(20px, 700, 30px, $font-primary);
+    
+    @media (max-width: $vp-tabletPortrait) {
+        @include typography(16px, 700, 26px, $font-primary);
+        br {
+            display: contents;
+        }
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+        @include typography(14px, 700, 24px, $font-primary);
+    }
+}
+
+.small-text {
+    @include typography(14px, 400, 24px, $font-primary);
+
+    @media (max-width: $vp-tabletPortrait) {
+        @include typography(12px, 400, 22px, $font-primary);
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+        @include typography(10px, 400, 20px, $font-primary);
+    }
+}
+
+.inner-title {
+    @include  inner-title;
+}
+
+.container {
+    //padding: 0 100px;
+
+    @media (min-width: 1440px) {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1440px) {
+        max-width: 100%;
+        padding: 0 80px;
+    }
+ 
+    @media (max-width: $vp-mobileLandscape) {
+        padding: 0 30px;
+    }
+}
+
+.tablet-only {
+    @media (max-width: $vp-mobileLandscape) {
+        display: none !important;
+    }
+}
+
+.mobile-only {
+    display: none !important;
+
+    @media (max-width: $vp-mobileLandscape) {
+        display: block !important;
+        margin-top: 60px;;
+    }
+}
+
+.btn {
+    border-radius: 100px;
+    padding: 10px 30px;
+    text-decoration: none;
+
+    @media (max-width: $vp-mobileLandscape) {
+        padding: 10px 15px;
+    }
+
+    &--transparent {
+        @include typography(20px, 700, 30px, $font-primary);
+        background: transparent;
+        border: 1px solid $dark-sapphire;
+        color: $dark-sapphire;
+
+        @media (max-width: $vp-tabletPortrait) {
+            @include typography(14px, 700, 24px, $font-primary);
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+            @include typography(12px, 700, 22px, $font-primary);
+        }
+
+        &:hover {
+            background: $dark-sapphire;
+            color: $white;
+        }
+    }
+
+    &--stroked-white {
+        @include typography(20px, 700, 30px, $font-primary);
+        background: transparent;
+        border: 1px solid $white;
+        color: $white;
+
+        @media (max-width: $vp-tabletPortrait) {
+            @include typography(14px, 700, 24px, $font-primary);
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+            @include typography(12px, 700, 22px, $font-primary);
+        }
+
+        &:hover {
+            background: $white;
+            border: 1px solid $white;
+            color: $dark-sapphire;
+        }
+    }
+
+    &--solid {
+        @include typography(20px, 700, 30px, $font-primary);
+        background: #00A4C3;
+        border: none;
+        color: $white;
+
+        @media (max-width: $vp-tabletPortrait) {
+            @include typography(14px, 700, 24px, $font-primary);
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+            @include typography(12px, 700, 22px, $font-primary);
+        }
+
+        &:hover {
+            background: $red-sun;
+            color: $white;
+        }
+    }
+
+    &--light-blue {
+        background-color: $pacific-blue;
+        color: $white;
+        
+        &:hover {
+            background-color: $red-sun;
+        }
+    }
+
+    &--white {
+        background-color: $white;
+        color: $red-sun;
+        &:hover {
+            background-color: $golden-yellow;
+            color: $white;
+        }
+    }
+
+    &--info {
+        background-color: $dark-sapphire;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 100px;
+
+        @include body-font;
+    }
+
+    &--phone {
+        background-color: $red-sun;
+        color: $white;
+        padding: 10px 20px;
+        border-radius: 100px;
+
+        @include body-font;
+    }
+
+
+}
+
+    .btn--link {
+        background-color: transparent;
+        color: $white;
+        padding: 10px 0px;
+        border-bottom: 1px solid $white;
+        text-decoration: none;
+
+        @include body-font;
+
+        &:hover {
+            color: $pacific-blue;
+            border-bottom: 1px solid $pacific-blue;
+        }
+    }
+
+#error-404-wrapper {
+    background: $white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .no-page-wrapper {
+        text-align: center;
+        max-width: 480px;
+        width: 100%;
+        animation: fadeIn 0.8s ease forwards;
+
+        .code-line {
+            @include typography(11px, 400, 16px, $font-primary);
+            letter-spacing: 1px;
+            color: $dark-sapphire;
+            font-family: monospace;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-style {
+
+            h1.gradient {
+                @include typography(clamp(96px, 20vw, 160px), 700, 1, $font-primary);
+                color: $dark-sapphire;
+                letter-spacing: -4px;
+                margin-bottom: 0;
+
+                @media (max-width: $vp-tabletPortrait) {
+                    font-size: clamp(72px, 15vw, 120px);
+                }
+
+                @media (max-width: $vp-mobileLandscape) {
+                    font-size: clamp(64px, 20vw, 96px);
+                }
+            }
+
+            .divider {
+                width: 48px;
+                height: 2px;
+                background: $dark-sapphire;
+                margin: 1.5rem auto;
+                opacity: 0.2;
+            }
+
+            .subheader {
+                @include typography(20px, 700, 30px, $font-primary);
+                color: $dark-sapphire;
+                letter-spacing: -0.3px;
+                margin-bottom: 0.75rem;
+
+                @media (max-width: $vp-tabletPortrait) {
+                    @include typography(18px, 700, 28px, $font-primary);
+                }
+
+                @media (max-width: $vp-mobileLandscape) {
+                    @include typography(16px, 700, 26px, $font-primary);
+                }
+            }
+
+            .description {
+                @include typography(15px, 400, 1.7, $font-primary);
+                color: $dark-sapphire;
+                opacity: 0.6;
+                margin-bottom: 2rem;
+
+                @media (max-width: $vp-mobileLandscape) {
+                    @include typography(13px, 400, 1.6, $font-primary);
+                }
+
+                a {
+                    color: $dark-sapphire;
+                    opacity: 1;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: $pacific-blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                border-radius: 100px;
+
+                &--ghost-dark {
+                    @include typography(14px, 700, 24px, $font-primary);
+                    background: transparent;
+                    color: $dark-sapphire;
+                    border: 1px solid $dark-sapphire;
+
+                    &:hover {
+                        background: $dark-sapphire;
+                        color: $white;
+                    }
+                }
+
+                &--solid-dark {
+                    @include typography(14px, 700, 24px, $font-primary);
+                    background: $dark-sapphire;
+                    color: $white;
+                    border: none;
+
+                    &:hover {
+                        background: $pacific-blue;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

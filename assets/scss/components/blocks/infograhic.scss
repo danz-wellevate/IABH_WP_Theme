@@ -1,0 +1,65 @@
+/* Infograhic Block Styles */
+.block--custom-layout__infographic {
+  padding-top: 100px;
+  @include padding-top;
+  .fullwidth-content-wrapper {
+    border: 1px solid #a9aaac;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .infographic-img {
+      padding: 30px 15px;
+
+      @media (max-width: $vp-mobileLandscape) {
+        height: 160px;
+      }
+
+      img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+
+        max-width: 100%;
+        @media (max-width: $vp-mobileLandscape) {
+          height: 110%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .content {
+      background-color: $red-sun;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      position: relative;
+
+      @media (max-width: $vp-mobileLandscape) {
+        padding: 20px;
+      }
+
+      .title {
+        @include typography(26px, 700, 36px, $font-primary);
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: $white;
+
+        @media (max-width: $vp-tabletPortrait) {
+          @include typography(20px, 700, 30px, $font-primary);
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          @include typography(16px, 700, 26px, $font-primary);
+        }
+      }
+
+      .description {
+        p {
+          color: $white;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

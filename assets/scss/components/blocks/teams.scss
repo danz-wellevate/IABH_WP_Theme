@@ -1,0 +1,197 @@
+/* Teams Block Styles */
+.block--custom-layout__teams {
+  padding-top: 100px;
+  @include padding-top;
+  .teams-header {
+    h2 {
+      color: $dark-sapphire;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      @media (max-width: $vp-tabletPortrait) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .teams__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      gap: 20px;
+    }
+
+    .teams__item {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+
+      @media (max-width: $vp-mobileLandscape) {
+        flex-direction: column;
+      }
+
+      .teams__profile {
+        width: 300px;
+        flex-shrink: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent; // FIX: color lives on teams__info only, prevents white gap
+
+        @media (max-width: $vp-tabletPortrait) {
+          width: 277px;
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          width: 100%;
+        }
+
+        img {
+          max-width: 100%;
+          display: block; // FIX: removes inline-block gap below image
+        }
+
+        .teams__info {
+          display: flex;
+          flex-direction: column;
+          padding: 30px 20px;
+          border-radius: 0 0 15px 15px; // FIX: rounds only the bottom corners to match the card
+
+          @media (max-width: $vp-mobileLandscape) {
+            padding: 20px;
+          }
+
+          p {
+            @include typography(20px, 700, 30px, $font-primary);
+
+            @media (max-width: $vp-tabletPortrait) {
+              @include typography(16px, 700, 26px, $font-primary);
+            }
+
+            @media (max-width: $vp-mobileLandscape) {
+              @include typography(14px, 700, 24px, $font-primary);
+            }
+
+            color: $white;
+            margin-top: 0;
+            margin-bottom: 10px;
+          }
+
+          span {
+            @include typography(14px, 400, 24px, $font-primary);
+            @media (max-width: $vp-mobileLandscape) {
+              @include typography(12px, 400, 22px, $font-primary);
+            }
+            color: $white;
+            margin-bottom: 15px;
+          }
+
+          .teams__social {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            @media (max-width: $vp-tabletPortrait) {
+              gap: 10px;
+            }
+
+            // LinkedIn button — white background, coral icon
+            a {
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $white;
+              border-radius: 6px;
+              width: 25px;
+              height: 25px;
+              color: #EB574F;
+              transition: opacity 0.2s ease;
+
+              &:hover {
+                opacity: 0.8;
+              }
+
+              i {
+                font-size: 18px;
+              }
+            }
+
+            // Envelope icon — white background with coral icon
+            a:has(.fa-envelope) {
+              width: 25px;
+              height: 25px;
+              border-radius: 6px;
+              background-color: $white;
+              color: #EB574F;
+
+              i {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .teams__content {
+        width: 100%;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @media (min-width: #{$vp-mobileLandscape + 1}) and (max-width: $vp-tabletPortrait) {
+          padding: 20px 25px;
+        }
+
+        .body-text {
+          color: $dark-sapphire;
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 30px 0;
+          padding-bottom: 0 !important;
+        }
+
+        .expertise {
+          display: flex;
+          gap: 10px;
+
+          @media (max-width: $vp-tabletPortrait) {
+            flex-direction: column;
+          }
+          @media (max-width: $vp-mobileLandscape) {
+            flex-direction: row;
+          }
+
+          .expertise__item {
+            @include typography(16px, 700, 26px, $font-primary);
+            color: $dark-sapphire;
+            background-color: $light-grey;
+            padding: 5px 20px;
+            border-radius: 100px;
+
+            @media (max-width: $vp-tabletPortrait) {
+              @include typography(14px, 600, 24px, $font-primary);
+            }
+            @media (max-width: $vp-mobileLandscape) {
+              padding: 5px 10px;
+              @include typography(12px, 600, 20px, $font-primary);
+            }
+          }
+        }
+
+        .body-text {
+          margin-top: 30px;
+          p {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}

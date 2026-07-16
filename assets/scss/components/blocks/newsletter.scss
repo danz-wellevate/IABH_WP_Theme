@@ -1,0 +1,238 @@
+/* Map Address Block Styles */
+.block--custom-layout__newsletter {
+     padding: 100px 0;
+      @include both-padding;
+
+
+      .forminator-edit-module {
+        display: none;
+      }
+     .newsletter-wrapper {
+          display: flex;
+          gap: 100px;
+
+          @media (max-width: $vp-tabletLandscape) {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          &.image-left {
+                flex-direction: row-reverse;
+  
+                @media (max-width: $vp-tabletLandscape) {
+                  flex-direction: column;
+                }
+          }
+
+          .col {
+               flex: 1;
+               padding: 0;
+               width: 100%;
+
+               &.nl-img {
+                    .img-item {
+                         max-width: 100%;
+                         border-radius: 15px;
+
+                         @media (max-width: $vp-tabletLandscape) {
+                           width: 100%;
+                           height: 300px;
+                           object-fit: cover;
+                           object-position: top;
+                         }
+                    }
+               }
+
+               &.nl-details {
+                padding: 60px 30px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                  .content {
+                    width: 100%;
+
+                    .contact-information {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                        margin-bottom: 15px;
+
+                        h2 {
+                              color: $dark-sapphire;
+                              margin-top: 0;
+                              margin-bottom: 0;
+                        }
+
+                        p {
+                              margin: 0;
+                              color: $dark-sapphire;
+
+                              a {
+                                  color: $dark-sapphire;
+                                  text-decoration: none;
+                              }
+                        }
+
+                        ul {
+                            list-style-type: disc;
+                            margin-left: 2rem;
+                            color: $dark-sapphire;
+                            margin-top: 0;
+                        }
+
+                        .forminator-shortcode {
+                          width: 100%;
+
+                          // Forminator sets its own max-width on the form element — kill it
+                          .forminator-ui {
+                            width: 100% !important;
+                            max-width: 100% !important;
+                          }
+
+                          form {
+                            font-family: $font-primary;
+                            display: flex !important;
+                            flex-direction: row !important;
+                            flex-wrap: nowrap !important;
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            align-items: stretch;
+
+                            label {
+                              display: none;
+                            }
+
+                            // Each forminator-row is a flex child (email row + button row)
+                            .forminator-row {
+                              margin: 0 !important;
+                              padding: 0 !important;
+                            }
+
+                            // Email row grows to fill remaining space
+                            .forminator-row:not(.forminator-row-last) {
+                              flex: 1 1 auto !important;
+                              min-width: 0 !important;
+                            }
+
+                            // Button row stays fixed width
+                            .forminator-row-last {
+                              flex: 0 0 auto !important;
+                            }
+
+                            // Forminator col — fill the row
+                            .forminator-col-12,
+                            .forminator-col {
+                              width: 100% !important;
+                              max-width: 100% !important;
+                              padding: 0 !important;
+                            }
+
+                            // Inner field wrapper
+                            .forminator-field {
+                              width: 100% !important;
+                              max-width: 100% !important;
+                            }
+
+                            .forminator-email--field {
+                              width: 100% !important;
+                              height: 46px;
+                              padding: 9px 14px;
+                              border-top-left-radius: 25px;
+                              border-bottom-left-radius: 25px;
+                              border-top-right-radius: 0;
+                              border-bottom-right-radius: 0;
+                              border: 1px solid #A9AAAC;
+                              border-right: none;
+                              outline: none;
+                              color: $dark-sapphire;
+                              box-sizing: border-box;
+
+                              @media (max-width: $vp-tabletPortrait) {
+                                font-size: 14px !important;
+                              }
+
+                              @media (max-width: $vp_mobileLandscape) {
+                                font-size: 12px !important;
+                              }
+
+                              &::placeholder {
+                                color: $dark-sapphire;
+                                opacity: 0.6;
+                              }
+
+                              &:focus {
+                                border-color: $pacific-blue;
+                              }
+                            }
+
+                            .forminator-button-submit {
+                              height: 46px;
+                              width: auto !important;
+                              min-width: 100px;
+                              flex-shrink: 0;
+                              background-color: $pacific-blue;
+                              color: $white;
+                              padding: 5px 20px;
+                              border: 0;
+                              border-top-right-radius: 25px;
+                              border-bottom-right-radius: 25px;
+                              border-top-left-radius: 0;
+                              border-bottom-left-radius: 0;
+                              cursor: pointer;
+                              transition: background-color 0.2s ease;
+                              box-sizing: border-box;
+
+                              @include typography(14px, 700, inherit, $font-primary);
+
+                              @media (max-width: $vp-tabletPortrait) {
+                                  @include typography(20px, 700, inherit, $font-primary);
+                                  br {
+                                      display: contents;
+                                  }
+                              }
+                              @media (max-width: $vp-mobilePortrait) {
+                                  @include typography(14px, 700, inherit, $font-primary);
+                              }
+                              @media (max-width: $vp-mobileLandscape) {
+                                  @include typography(12px, 700, inherit, $font-primary);
+                              }
+
+                              &:hover {
+                                background-color: $dark-sapphire;
+                              }
+                            }
+                          }
+                        }
+                    }
+                  }
+
+                @media (max-width: $vp-tabletLandscape) {
+                  padding: 20px 0;
+                  overflow: visible;
+                  width: 100%;
+                  max-width: 100%;
+                  box-sizing: border-box;
+                }
+               }
+
+          }
+     }
+
+     &.tablet-mobile-image-top {
+       .newsletter-wrapper {
+   
+         @media (max-width: $vp-tabletLandscape) {
+           flex-direction: column-reverse; 
+         }
+
+
+         &.image-left {
+           @media (max-width: $vp-tabletLandscape) {
+             flex-direction: column-reverse;
+           }
+         }
+       }
+     }
+}

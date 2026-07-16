@@ -1,0 +1,26 @@
+{
+  "name": "acf/inner-content",
+  "title": "Inner Content",
+  "description": "Inner Content block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "inner-content"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/inner-content/inner-content.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/inner-content/preview.jpg"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "acf/contact-person",
+  "title": "Contact Person",
+  "description": "Contact Person block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "contact-person"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/contact-person/contact-person.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/contact-person/preview.jpg"
+      }
+    }
+  }
+}

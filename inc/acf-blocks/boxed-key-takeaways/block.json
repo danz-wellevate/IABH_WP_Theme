@@ -1,0 +1,26 @@
+{
+  "name": "acf/boxed-key-takeaways",
+  "title": "Boxed Key Takeaways",
+  "description": "Boxed Key Takeaways block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "boxed-key-takeaways"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/boxed-key-takeaways/boxed-key-takeaways.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/boxed-key-takeaways/preview.jpg"
+      }
+    }
+  }
+}

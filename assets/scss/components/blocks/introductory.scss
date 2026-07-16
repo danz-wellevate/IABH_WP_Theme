@@ -1,0 +1,43 @@
+/* Introductory Block Styles */
+.block--custom-layout__introductory {
+  padding-top: 100px;
+  @include padding-top;
+
+  h2 {
+    color: $dark-sapphire;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .introductory-image {
+    margin-bottom: 60px;
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .body-text {
+    p {
+      color: $dark-sapphire; /* Changed to dark sapphire */
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .btn--transparent {
+    display: inline-block;
+    margin-top: 30px;
+
+    @media (max-width: $vp-tabletLandscape) {
+      margin-top: 20px;
+    }
+  }
+}

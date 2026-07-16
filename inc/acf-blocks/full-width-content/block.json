@@ -1,0 +1,26 @@
+{
+  "name": "acf/full-width-content",
+  "title": "Full Width Content",
+  "description": "Full Width Content block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "full-width-content"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/full-width-content/full-width-content.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/full-width-content/preview.jpg"
+      }
+    }
+  }
+}

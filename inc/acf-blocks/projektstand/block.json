@@ -1,0 +1,26 @@
+{
+  "name": "acf/projektstand",
+  "title": "Projektstand",
+  "description": "Projektstand block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "projektstand"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/projektstand/projektstand.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/projektstand/preview.jpg"
+      }
+    }
+  }
+}

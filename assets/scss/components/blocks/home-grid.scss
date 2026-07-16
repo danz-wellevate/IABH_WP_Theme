@@ -1,0 +1,104 @@
+/* Home Grid Block Styles */
+.block--custom-layout__home-grid {
+  padding-top: 100px;
+  @include padding-top;
+  .home-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    @media (max-width: $vp-mobileLandscape) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 10px;
+    }
+
+    .grid-item {
+      border-radius: 10px;
+      overflow: hidden;
+
+      .grid-bg {
+        height: 250px;
+        @include bg-img-props;
+
+        @media (max-width: $vp-mobileLandscape) {
+          height: 200px;
+        }
+
+        .grid-overlay {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .grid-title {
+        padding: 30px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        height: 100%;
+
+        @media (max-width: $vp-tabletPortrait) {
+          padding: 20px;
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 20px 15px;
+          gap: 10px;
+        }
+
+        .title {
+          @include typography(20px, 700, 30px, $font-primary);
+          color: $white;
+
+          @media (max-width: $vp-tabletPortrait) {
+            @include typography(16px, 700, 26px, $font-primary);
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(14px, 700, 24px, $font-primary);
+          }
+        }
+        
+        .subtitle-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+
+          .subtitle {
+            color: $white;
+          }
+
+          .btn--rounded {
+            border-radius: 50px;
+            background-color: #FFF;
+            height: 30px;
+            width: 30px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+
+            @media (max-width: $vp-mobileLandscape) {
+              height: 20px;
+              width: 20px;
+              font-size: 8px;
+            }
+
+            &:hover {
+              transform: scale(0.88);
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+}

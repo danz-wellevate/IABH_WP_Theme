@@ -1,0 +1,26 @@
+{
+  "name": "acf/about-us",
+  "title": "About Us",
+  "description": "About Us block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "about-us"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/about-us/about-us.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/about-us/preview.jpg"
+      }
+    }
+  }
+}

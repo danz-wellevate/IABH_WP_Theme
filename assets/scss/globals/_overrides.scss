@@ -1,0 +1,9 @@
+.forminator-ui#forminator-module-510.forminator-design--default .forminator-button-submit {
+    font-family: $font-primary !important;
+}
+
+#kontakt-custom-header .hero-banner-bg {
+    @media (max-width: $vp-mobileLandscape) {
+        background-position: left;
+    }
+}

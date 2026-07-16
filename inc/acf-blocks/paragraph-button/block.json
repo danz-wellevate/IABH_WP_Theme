@@ -1,0 +1,26 @@
+{
+  "name": "acf/paragraph-button",
+  "title": "Paragraph Button",
+  "description": "Paragraph Button block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "paragraph-button"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/paragraph-button/paragraph-button.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/paragraph-button/preview.jpg"
+      }
+    }
+  }
+}

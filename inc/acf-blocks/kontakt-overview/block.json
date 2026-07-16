@@ -1,0 +1,26 @@
+{
+  "name": "acf/kontakt-overview",
+  "title": "Kontakt Overview",
+  "description": "Kontakt Overview block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "kontakt-overview"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/kontakt-overview/kontakt-overview.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/kontakt-overview/preview.jpg"
+      }
+    }
+  }
+}

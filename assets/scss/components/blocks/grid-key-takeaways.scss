@@ -1,0 +1,80 @@
+/* Grid Key Takeaways Block Styles */
+.block--custom-layout__grid-key-takeaways {
+  padding: 100px 0;
+  @include both-padding;
+  .key-pointer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      gap: 10px;
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+      flex-direction: column;
+    }
+
+    .key-pointer__item {
+      background-color: $light-grey;
+      padding: 30px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      width: calc((100% - 15px) / 2);
+      flex: 1;
+
+      @media (max-width: $vp-tabletPortrait) {
+        padding: 30px 20px;
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        width: 100%;
+      }
+
+      .key-pointer__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 25px;
+        border-bottom-left-radius: 15px;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        @media (max-width: $vp-tabletPortrait) {
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 15px;
+        }
+      }
+
+      .key-pointer__text {
+        h2 {
+          color: $dark-sapphire;
+          margin-top: 0;
+          padding-right: 120px;
+
+          @media (max-width: $vp-tabletPortrait) {
+            padding-right: 110px;
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            padding-right: 70px;
+          }
+        }
+
+        .body-text {
+          color: $dark-sapphire;
+        }
+      }
+    }
+  }
+}

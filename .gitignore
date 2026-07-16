@@ -1,0 +1,19 @@
+# Build output
+/dist/
+
+# Source maps (all locations, all depths)
+**/*.map
+
+# Compiled CSS
+assets/css/*.css
+assets/css/*.min.css
+
+# Editor junk
+.DS_Store
+Thumbs.db
+
+# Node modules
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*

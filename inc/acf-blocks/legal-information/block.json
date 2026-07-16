@@ -1,0 +1,26 @@
+{
+  "name": "acf/legal-information",
+  "title": "Legal Information",
+  "description": "Legal Information block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "legal-information"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/legal-information/legal-information.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/legal-information/preview.jpg"
+      }
+    }
+  }
+}

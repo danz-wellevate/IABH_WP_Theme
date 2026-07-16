@@ -1,0 +1,38 @@
+{
+  "name": "your-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme with SCSS and JS bundling via Vite",
+  "main": "index.js",
+  "scripts": {
+    "vite": "vite",
+    "vite:build": "vite build",
+    "vite:watch": "vite build --watch",
+    "sass": "sass assets/scss/style.scss assets/css/style.min.css --watch",
+    "sass:build": "sass assets/scss/style.scss assets/css/style.min.css --style compressed",
+    "watch-blocks": "node dev/watch-blocks.js",
+    "dev": "npm-run-all --parallel sass watch-blocks vite:watch",
+    "build": "npm-run-all sass:build vite:build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.89.1",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@barba/core": "^2.10.3",
+    "chokidar": "^4.0.3",
+    "lazysizes": "^5.3.2",
+    "swiper": "^12.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danz-wellevate/wellevate-base-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danz-wellevate/wellevate-base-theme/issues"
+  },
+  "homepage": "https://github.com/danz-wellevate/wellevate-base-theme#readme"
+}

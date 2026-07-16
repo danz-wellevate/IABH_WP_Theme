@@ -1,0 +1,360 @@
+/* Two Column Text Image Block Styles */
+.block--custom-layout__two-column-text-image {
+  padding-top: 100px;
+  @include padding-top;
+  overflow: hidden; // Prevent horizontal scroll caused by bleeding image
+
+  .two-column__wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 100px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      display: block;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    // ─── Image RIGHT ──────────────────────────────────────────────────────────
+    &.image-right {
+      &.image-bleed--on {
+        .two-column__image-content {
+
+          // Large screens (>1440px): container fixed 1000px centered
+          @media (min-width: 1441px) {
+            margin-right: calc(-1 * (100vw - 1000px) / 2);
+            width: calc(50% + (100vw - 1000px) / 2) !important;
+            flex: none;
+            height: 550px;
+          }
+
+          // 992px–1440px: fluid container
+          @media (max-width: 1440px) {
+            margin-right: calc(-1 * (100vw - 100%) / 2);
+            width: calc(50% + (100vw - 100%) / 2) !important;
+            flex: none;
+            height: 550px;
+
+              .preview {
+              margin-left: 80px !important;
+            }
+          }
+
+          // ≤991px: escape container entirely, bleed full viewport width
+          // align image to the RIGHT so it bleeds off the right edge
+          @media (max-width: $vp-tabletPortrait) {
+            position: relative !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 100vw !important;
+            height: 60vw !important;
+            margin: 0 !important;
+            flex: none;
+
+            .preview {
+              margin-left: 80px !important;
+            }
+            img {
+              object-position: right center;
+            }
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            height: 55vw !important;
+            .preview {
+              margin-left: 30px !important;
+            }
+          }
+
+          @media (max-width: $vp-mobilePortrait) {
+            height: 75vw !important;
+            
+          }
+        }
+      }
+
+      &.image-bleed--off {
+        .two-column__image-content {
+          margin-right: 0;
+          width: 50% !important;
+          flex: none;
+
+          @media (max-width: $vp-tabletPortrait) {
+            width: 100% !important;
+            margin-right: 0;
+          }
+        }
+
+        .preview {
+          margin-right: 30px;
+        }
+      }
+
+      .preview {
+        bottom: 0px;
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // ─── Image LEFT ───────────────────────────────────────────────────────────
+    &.image-left {
+      flex-direction: row-reverse;
+
+      @media (max-width: $vp-tabletPortrait) {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      &.image-bleed--on {
+        .two-column__image-content {
+
+          // Large screens (>1440px): container fixed 1000px centered
+          @media (min-width: 1441px) {
+            margin-left: calc(-1 * (100vw - 1000px) / 2);
+            width: calc(50% + (100vw - 1000px) / 2) !important;
+            flex: none;
+            height: 550px;
+          }
+
+          // 992px–1440px: fluid container
+          @media (max-width: 1440px) {
+            margin-left: calc(-1 * (100vw - 100%) / 2);
+            width: calc(50% + (100vw - 100%) / 2) !important;
+            flex: none;
+            height: 550px;
+          }
+
+          // ≤991px: escape container entirely, bleed full viewport width
+          // align image to the LEFT so it bleeds off the left edge
+          @media (max-width: $vp-tabletPortrait) {
+            position: relative !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 100vw !important;
+            height: 60vw !important;
+            margin: 0 !important;
+            flex: none;
+
+            img {
+              object-position: left center;
+            }
+          
+          }
+
+          @media (max-width: $vp-mobileLandscape) {
+            height: 55vw !important;
+          }
+
+          @media (max-width: $vp-mobilePortrait) {
+            height: 75vw !important;
+          }
+        }
+      }
+
+      &.image-bleed--off {
+        .two-column__image-content {
+          margin-left: 0;
+          width: 50%;
+          flex: none;
+
+          @media (max-width: $vp-tabletPortrait) {
+            width: 100%;
+            margin-left: 0;
+            
+          }
+        }
+      }
+
+      .preview {
+        bottom: 0px;
+        right: 0;
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // ─── Shared desktop/tablet sizing (both columns) ──────────────────────────
+    .two-column__text-content,
+    .two-column__image-content {
+      flex: 1;
+      width: 50%;
+      height: 550px;
+
+      @media (max-width: $vp-tabletPortrait) {
+        width: 100%;
+        height: 286px;
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        width: 100%;
+        height: auto;
+        aspect-ratio: unset;
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────────────
+
+    .two-column__image-content {
+      @media (max-width: $vp-mobileLandscape) {
+        height: 260px;
+        aspect-ratio: unset;
+      }
+    }
+
+    .two-column__image-content.image-size--change {
+      @media (max-width: $vp-tabletPortrait) {
+        width: 584px;
+        height: 731px;
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        width: 100%;
+        height: 350px;
+        aspect-ratio: unset;
+      }
+
+
+    }
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // ─── Center image on tablet/mobile: only when BOTH bleed ON + center ON ───
+&.image-bleed--on.image-center--on {
+  .two-column__image-content {
+    @media (max-width: $vp-tabletPortrait) {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      height: 500px !important;
+      position: relative !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+
+      img {
+        object-position: center center !important; // ← add this
+      }
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+      height: 286px !important;
+    }
+  }
+}
+    // ─────────────────────────────────────────────────────────────────────────
+
+    .two-column__text-content {
+      .superheader {
+        @include typography(16px, 700, 26px, $font-primary);
+        background-color: $light-grey;
+        color: $dark-sapphire;
+        padding: 5px 20px;
+        border-radius: 100px;
+        width: fit-content;
+        margin-bottom: 15px;
+        @media (max-width: $vp-tabletPortrait) {
+          @include typography(14px, 700, 24px, $font-primary);
+        }
+        @media (max-width: $vp-mobileLandscape) {
+          @include typography(12px, 700, 22px, $font-primary);
+        }
+      }
+
+      .column-title {
+        @include typography(26px, 700, 36px, $font-primary);
+        color: $dark-sapphire;
+        margin-top: 0;
+        margin-bottom: 30px;
+
+        @media (max-width: $vp-tabletPortrait) {
+          @include typography(20px, 700, 30px, $font-primary);
+          margin-bottom: 20px;
+        }
+        @media (max-width: $vp-mobileLandscape) {
+          @include typography(16px, 700, 26px, $font-primary);
+        }
+      }
+
+      .column-text {
+        p {
+          @include typography(16px, 400, 26px, $font-primary);
+          color: $dark-sapphire;
+          margin-top: 0;
+          margin-bottom: 30px;
+          @media (max-width: $vp-tabletPortrait) {
+            @include typography(14px, 400, 24px, $font-primary);
+            margin-bottom: 20px;
+          }
+          @media (max-width: $vp-mobileLandscape) {
+            @include typography(12px, 400, 22px, $font-primary);
+          }
+        }
+      }
+    }
+
+    .two-column__text-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .two-column__image-content {
+      position: relative;
+      overflow: hidden;
+
+      .image-caption {
+        text-align: center;
+        p {
+          color: $dark-sapphire;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        &.original-image {
+          z-index: 1;
+        }
+
+        &.hovered-image {
+          z-index: 2;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
+
+      .preview {
+        position: absolute;
+        cursor: pointer;
+        pointer-events: auto;
+        z-index: 3;
+
+        svg path {
+          stroke: #a9aaac;
+          stroke-width: 2px;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          // &:hover {
+          //   svg path {
+          //     fill: $dark-sapphire;
+          //     stroke: $dark-sapphire;
+          //   }
+          // }
+        }
+
+        &.is-active {
+          svg path {
+            fill: $dark-sapphire;
+            stroke: $dark-sapphire;
+          }
+        }
+      }
+    }
+  }
+}

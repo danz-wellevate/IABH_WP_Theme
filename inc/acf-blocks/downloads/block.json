@@ -1,0 +1,26 @@
+{
+  "name": "acf/downloads",
+  "title": "Downloads",
+  "description": "Downloads block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "downloads"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/downloads/downloads.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/downloads/preview.jpg"
+      }
+    }
+  }
+}

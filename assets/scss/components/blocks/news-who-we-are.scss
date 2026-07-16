@@ -1,0 +1,102 @@
+/* News Who We Are Block Styles */
+.block--custom-layout__news-who-we-are {
+  .main-content-wrapper {
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+
+    @media (max-width: $vp-mobileLandscape) {
+      flex-direction: column;
+    }
+
+    .col {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        background-color: #eb574f;
+        width: 400px;
+      }
+
+      &:nth-child(2) {
+        background-color: #ededee;
+        width: 100%;
+      }
+
+      .section-header-wrapper {
+        padding: 30px;
+        h2 {
+          color: $white;
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 20px;
+        }
+      }
+
+      .rich-text {
+        padding: 60px 30px;
+        ul {
+          list-style-type: disc;
+          list-style-position: outside;
+          padding: 0 2.5rem;
+          @media (max-width: $vp-mobileLandscape) {
+            padding: 0 1.5rem;
+          }
+          li {
+            color: $dark-sapphire;
+            @include body-font;
+            margin-bottom: 15px;
+          }
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .grid-content-wrapper {
+    margin-top: 100px;
+
+    .section-header-wrapper {
+      h2 {
+        color: $dark-sapphire;
+        margin-bottom: 30px;
+      }
+    }
+
+    .checkbox-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+
+      @media (max-width: $vp-mobileLandscape) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .checkbox-item {
+        background-color: $light-grey;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 30px 30px;
+        font-weight: 700;
+        border-radius: 10px;
+
+        @media (max-width: $vp-tabletPortrait) {
+          padding: 20px;
+        }
+
+        .description {
+          p {
+            color: $dark-sapphire;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
