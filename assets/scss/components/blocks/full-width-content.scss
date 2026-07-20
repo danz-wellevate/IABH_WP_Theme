@@ -1,0 +1,112 @@
+/* Full Width Content Block Styles */
+.block--custom-layout__full-width-content {
+  padding: 100px 0;
+
+  @include padding-top;
+  @include padding-bottom;
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 50px 60px;
+    background-color: $dark-sapphire;
+    background-image: var(--bg-image-desktop);
+    @include bg-img-props;
+
+    @media (max-width: $vp-mobileLandscape) {
+      padding: 35px 25px;
+      background-image: var(--bg-image-mobile, var(--bg-image-desktop));
+    }
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   inset: 0;
+    //   background: linear-gradient(135deg, rgba($dark-sapphire, 0.85) 0%, rgba($dark-sapphire, 0.55) 100%);
+    //   pointer-events: none;
+    // }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .card-header {
+    @include typography(28px, 700, 36px, $font-primary);
+    color: $white;
+    margin: 0 0 16px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      @include typography(22px, 700, 30px, $font-primary);
+    }
+  }
+
+  .card-paragraph {
+    color: rgba($white, 0.75);
+    max-width: 560px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .key-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 40px;
+    max-width: 560px;
+    margin: 0 0 32px;
+
+    @media (max-width: $vp-mobileLandscape) {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__icon {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba($white, 0.15);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 4px;
+        border-left: 2px solid $white;
+        border-bottom: 2px solid $white;
+        transform: translate(-50%, -65%) rotate(-45deg);
+      }
+    }
+
+    &__text {
+      color: $white;
+      @include body-font;
+    }
+  }
+
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    &__icon {
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: rotate(45deg);
+    }
+  }
+}

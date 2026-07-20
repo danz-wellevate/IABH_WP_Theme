@@ -1,0 +1,26 @@
+{
+  "name": "acf/about-section",
+  "title": "About Section",
+  "description": "About Section block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "about-section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/about-section/about-section.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/about-section/preview.jpg"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "acf/partnerships",
+  "title": "Partnerships",
+  "description": "Partnerships block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "partnerships"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/partnerships/partnerships.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/partnerships/preview.jpg"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "acf/reports-and-publications",
+  "title": "Reports And Publications",
+  "description": "Reports And Publications block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "reports-and-publications"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/reports-and-publications/reports-and-publications.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/reports-and-publications/preview.jpg"
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
 {
-  "name": "acf/about-us",
-  "title": "About Us",
-  "description": "About Us block.",
+  "name": "acf/home-hero",
+  "title": "Home Hero",
+  "description": "Home Hero block.",
   "category": "custom-layout",
   "icon": "layout",
   "keywords": [
-    "about-us"
+    "home-hero"
   ],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "inc/acf-blocks/about-us/about-us.php"
+    "renderTemplate": "inc/acf-blocks/home-hero/home-hero.php"
   },
   "align": "full",
   "supports": {
@@ -19,7 +19,7 @@
     "attributes": {
       "mode": "preview",
       "data": {
-        "preview_image": "inc/acf-blocks/about-us/preview.jpg"
+        "preview_image": "inc/acf-blocks/home-hero/preview.jpg"
       }
     }
   }
