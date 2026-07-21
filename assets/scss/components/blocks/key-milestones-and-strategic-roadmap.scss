@@ -1,13 +1,9 @@
 /* Key Milestones And Strategic Roadmap Block Styles */
 .block--custom-layout__key-milestones-and-strategic-roadmap {
   padding: 100px 0;
-  // Hard safety net: nothing inside this block can ever push the page wide,
-  // no matter how many cards get added or if a flex child upstream is missing min-width:0
-  overflow-x: hidden;
+  @include both-padding;
 
-  // Mirrors .container's own gutter at each breakpoint, so the cards column
-  // below can break out by exactly that amount and land flush on the true
-  // viewport edge — whether .container is using padding or an auto-margin.
+  overflow-x: hidden;
   --kmsr-edge: 80px;
 
   @media (min-width: 1440px) {
@@ -51,21 +47,11 @@
     }
   }
 
-  // Applies to every .container inside this block — including the outer
-  // structural one AND the nested one wrapping the scrollbar below. Both
-  // need this reset: the outer one so the flex layout doesn't overflow the
-  // page, and the nested one so its own max-width/auto-margin rules don't
-  // fight the breakout math (see .events-scrollbar for the real width fix).
   .container {
     width: 100%;
     min-width: 0;
   }
 
-  // The nested .container (wrapping the scrollbar) still picks up the real
-  // site container's padding at these breakpoints. On tablet/mobile the
-  // scrollbar should be full-bleed with no gutter at all, so that padding
-  // needs to go too — desktop keeps it, since there the scrollbar is
-  // meant to stay inset and follow .container.
   .events-track .container {
     @media (max-width: $vp-tabletLandscape) {
       padding: 0;
@@ -79,10 +65,10 @@
     gap: 60px;
 
     .col {
-      min-width: 0; // let flex items shrink below their content's natural width
+      min-width: 0;
 
       &:last-child {
-        flex: 1; // this column (the cards) takes remaining space and can shrink
+        flex: 1;
       }
     }
     @media (max-width: $vp-tabletLandscape) {
@@ -95,15 +81,10 @@
     min-width: 0;
   }
 
-  // Wraps the scrollable row + the custom scrollbar track underneath it
   .events-track {
-    width: calc(
-      100% + var(--kmsr-edge)
-    ); // reclaim the container's right gutter…
-    margin-right: calc(
-      -1 * var(--kmsr-edge)
-    ); // …and pull out to the true viewport edge
-    min-width: 0; // allow flex child to shrink so overflow works
+    width: calc(100% + var(--kmsr-edge));
+    margin-right: calc(-1 * var(--kmsr-edge));
+    min-width: 0;
   }
 
   .events-repeater {
@@ -129,14 +110,6 @@
     }
   }
 
-  // Custom scrollbar track — mirrors the Figma spec.
-  // Sits inside .events-track (widened by --kmsr-edge for the breakout),
-  // wrapped in its own .container div. Subtracting --kmsr-edge back out
-  // here — rather than relying on the nested .container's own max-width —
-  // is what actually makes the track's real width equal the true container
-  // width at every breakpoint, including >=1440px where the nested
-  // .container sits inside a parent narrower than its 1000px max-width and
-  // so wouldn't self-constrain otherwise.
   .events-scrollbar {
     display: none;
     align-items: center;
@@ -162,13 +135,6 @@
       display: flex;
     }
 
-    // Mobile only: full-bleed, no gutter at all.
-    // Tablet now falls through to width: calc(100% - var(--kmsr-edge))
-    // above, so it keeps following the container's right gutter.
-    // @media (max-width: $vp-mobileLandscape) {
-    //   width: 100%;
-    // }
-
     &__thumb {
       position: absolute;
       top: 2px;
@@ -178,9 +144,7 @@
       border-radius: 100px;
       background: rgba(100, 100, 100, 0.4);
       cursor: grab;
-      // Smooths out momentum/eased-jump movement; JS disables this
-      // (transition: none) while the thumb is being actively dragged
-      // so it can't lag behind the pointer.
+
       transition:
         width 0.1s ease,
         transform 0.08s linear;
@@ -389,11 +353,25 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+
       &.item__button--save-date {
+        position: relative;
+        isolation: isolate; 
+        overflow: hidden; 
+
+        background: none;
+        background-clip: border-box;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: initial;
+
         border: 1px solid var(--Primary-Dull-Sea-Blue, #4a92a2);
         padding: 8px 20px;
         border-radius: 100px;
         margin-top: auto;
+        transition:
+          border-color 0.3s ease,
+          transform 0.3s ease;
+
         @media (max-width: $vp-tabletLandscape) {
           padding: 7px 30px;
           gap: 15px;
@@ -401,20 +379,59 @@
         @media (max-width: $vp-mobileLandscape) {
           padding: 7px 20px;
         }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: var(
+            --Primary-Gradient,
+            linear-gradient(90deg, #1e4252 0%, #4a92a2 100%)
+          );
+          opacity: 0;
+          transition: opacity 0.35s ease;
+          z-index: -1;
+        }
+
         .save-date-label {
+          position: relative;
           color: var(--Primary-Dull-Sea-Blue, #4a92a2);
           font-family: Montserrat;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
           line-height: 26px;
+          transition: color 0.3s ease;
 
           @media (max-width: $vp-tabletLandscape) {
             font-size: 12px;
             line-height: 22px;
           }
         }
+
+        svg path {
+          transition: stroke 0.3s ease;
+        }
+
+        &:hover {
+          transform: none;
+          border-color: transparent;
+
+          &::before {
+            opacity: 1;
+          }
+
+          .save-date-label {
+            color: #fff;
+          }
+
+          svg path {
+            stroke: #fff;
+          }
+        }
       }
+
       .icon {
         flex-shrink: 0;
       }
