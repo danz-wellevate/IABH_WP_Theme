@@ -2,12 +2,15 @@
 .block--custom-layout__home-hero {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 560px;
-  padding: 160px 0;
+  align-items: flex-end;
+  min-height: 700px;
+  padding: 90px 60px;
   background-color: $dark-sapphire;
   background-image: var(--bg-image-desktop);
   color: $white;
+  margin: 30px auto;
+  border-radius: 30px;
+  max-width: 1440px;
 
   @include bg-img-props;
   @include padding-top;
@@ -19,7 +22,7 @@
   }
 
   .inner-container {
-    max-width: 720px;
+    max-width: 780px;
   }
 
   h1 {

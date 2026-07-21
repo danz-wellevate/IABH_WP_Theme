@@ -23,7 +23,7 @@ $cta_link = get_field('cta_link');
     <!-- Block Content -->
     <div class="inner-container">
       <!-- Section header -->
-      <h2><?= esc_html($header) ?></h2>
+      <h2 class="header"><?= esc_html($header) ?></h2>
     </div>
 
      <div class="inner-container">

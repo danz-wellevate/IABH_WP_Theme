@@ -2,7 +2,7 @@
 .block--custom-layout__partnerships {
   padding: 100px 0;
 
-  h2 {
+  .header {
     @include typography(26px, 700, 36px, $font-primary);
     color: $dark-sapphire;
     margin: 0 0 40px;
@@ -37,7 +37,7 @@
       margin-bottom: 20px;
 
       h3 {
-        @include typography(18px, 700, 26px, $font-primary);
+        @include typography(22px, 700, 26px, $font-primary);
         color: $pacific-blue;
         margin: 0;
       }

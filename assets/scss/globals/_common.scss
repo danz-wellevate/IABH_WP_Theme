@@ -60,6 +60,8 @@ img.lazyloaded {
 }
 
 
+
+
 .secondary-header {
     @include typography(30px, 700, 40px, $font-primary);
     
@@ -76,17 +78,17 @@ img.lazyloaded {
 }
 
 .section-header {
-    @include typography(26px, 700, 40px, $font-primary);
+    @include typography(30px, 700, 40px, $font-primary);
     
     @media (max-width: $vp-tabletPortrait) {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(22px, 700, 32px, $font-primary);
         br {
             display: contents;
         }
     }
 
     @media (max-width: $vp-mobileLandscape) {
-        @include typography(16px, 700, 26px, $font-primary);
+        @include typography(20px, 700, 30px, $font-primary);
     }
 }
 

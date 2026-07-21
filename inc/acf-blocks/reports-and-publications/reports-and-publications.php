@@ -5,7 +5,7 @@ $background = get_field('background_color') ?: '#FFFFFF';
 $theme = get_field('theme') ?: 'light';
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'block--custom-layout__';
+$class_name = 'block--custom-layout__reports-and-publications';
 if ( ! empty( $block['className'] ) ) {
     $class_name .= ' ' . $block['className'];
 }
@@ -20,9 +20,7 @@ $header = get_field('header');
     <!-- Block Content -->
      <div class="inner-container">
       <div class="row">
-        <div class="header">
-          <h2><?= esc_html($header) ?></h2>
-        </div>
+        <h2 class="header"><?= esc_html($header) ?></h2>
       </div>
       <div class="row">
         <div class="content">
