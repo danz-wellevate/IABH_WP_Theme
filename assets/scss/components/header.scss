@@ -1,0 +1,295 @@
+// ---- Shared mixins ---------------------------------------------------
+@import '../globals/mixins';
+
+// ---- Brand variables -----------------------------------------------------
+$iabh-teal:        #4A92A2;
+$iabh-teal-dark:   #3d7a88;
+$iabh-teal-light:  rgba(74, 146, 162, 0.08);
+$iabh-white:       #ffffff;
+$iabh-text:        #1f2d3d;
+$iabh-border:      #e0e6e8;
+
+// ---- Smooth scrolling -----------------------------------------------
+html {
+	scroll-behavior: smooth;
+}
+
+
+[id] {
+	scroll-margin-top: 130px;
+}
+
+// ---- Header wrapper --------------------------------------------------
+#wrapper-navbar {
+	background-color: $iabh-white;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+
+	position: sticky !important;
+	top: 0 !important;
+	z-index: 1030;
+
+
+	.top-navbar-overlay {
+		background-color: $iabh-white;
+
+		.container {
+			max-width: 100% !important;
+			width: 100% !important;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			padding-left: 2rem !important;
+			padding-right: 2rem !important;
+		}
+	}
+}
+
+// ---- Main row: logo left, actions right ---------------------------------
+.inner-wrapper-navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	padding: 1.25rem 0; // extra breathing room top/bottom — adjust to taste
+	width: 100%;
+}
+
+// ---- Logo --------------------------------------------------------------
+.navbar-brand {
+	display: flex !important;
+	align-items: center;
+	text-decoration: none;
+	margin-right: auto !important; 
+	position: static !important;    
+	left: auto !important;
+	top: auto !important;
+	transform: none !important;
+
+	.navbar-logo,
+	.navbar-logo-svg {
+		display: flex;
+		align-items: center;
+	}
+
+	.navbar-title {
+		@include inner-title;
+		margin: 0;
+		color: $iabh-text;
+	}
+}
+
+.navbar-brand {
+	img,
+	svg {
+		width: 202px !important;
+		height: 75px !important;
+		max-height: none !important;
+		display: block;
+	}
+}
+
+// ---- Right-side action group --------------------------------------------
+.site-header-actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-shrink: 0;
+}
+
+// ---- Navigator dropdown --------------------------------------------------
+.navigator-dropdown {
+	position: relative;
+
+	.navigator-toggle {
+		all: unset; 
+		box-sizing: border-box;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between; 
+		gap: 12px;
+		min-width: 220px; 
+		padding: 10px 14px !important;
+		border: 1px solid $iabh-teal !important;
+		border-radius: 8px !important; 
+		background-color: $iabh-white !important;
+		color: $iabh-teal;
+		@include body-font;
+		font-weight: 500; // heavier than the body-font default, keeps the button emphasis
+		cursor: pointer;
+		text-align: left;
+		white-space: nowrap;
+
+		&:hover,
+		&:focus {
+			border-color: $iabh-teal-dark !important;
+			color: $iabh-teal-dark;
+			outline: none;
+		}
+	}
+
+	.navigator-toggle-label {
+		text-align: left;
+		flex: 1 1 auto;
+	}
+
+	.navigator-caret {
+		transition: transform 0.15s ease-in-out;
+		flex-shrink: 0;
+	}
+
+	.navigator-menu-wrap {
+		position: absolute;
+		top: calc(100% + 8px);
+		right: 0;
+		min-width: 220px;
+		background-color: $iabh-white;
+		border: 1px solid $iabh-border;
+		border-radius: 12px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+		padding: 0.5rem 0;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-6px);
+		transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out, visibility 0.15s;
+		z-index: 1000;
+	}
+
+	&.is-open {
+		.navigator-menu-wrap {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
+		.navigator-toggle {
+			border-color: $iabh-teal-dark;
+			color: $iabh-teal-dark;
+		}
+
+		.navigator-caret {
+			transform: rotate(180deg);
+		}
+	}
+
+	.navigator-menu {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			a {
+				display: block;
+				padding: 0.55rem 1.25rem;
+				color: $iabh-text;
+				text-decoration: none;
+				@include body-font;
+
+				&:hover,
+				&:focus {
+					background-color: $iabh-teal-light;
+					color: $iabh-teal-dark;
+				}
+			}
+
+			// Style sub-menus if you raise the wp_nav_menu 'depth' later
+			.sub-menu {
+				list-style: none;
+				padding-left: 1rem;
+			}
+		}
+	}
+
+	.navigator-empty {
+		padding: 0.55rem 1.25rem;
+		margin: 0;
+		font-size: 0.85rem;
+		color: #8a97a0;
+	}
+}
+
+// ---- Call button ----------------------------------------------------------
+.call-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: $iabh-teal;
+	border: 2px solid $iabh-white;
+	color: $iabh-white;
+	flex-shrink: 0;
+
+
+	text-decoration: none;
+
+	svg {
+		display: block;
+	}
+
+	i {
+		font-size: 16px;
+		color: $iabh-white; 
+        display:block;
+
+
+		text-shadow:
+			-1px -1px 0 $iabh-white,
+			 1px -1px 0 $iabh-white,
+			-1px  1px 0 $iabh-white,
+			 1px  1px 0 $iabh-white;
+
+		@supports (-webkit-text-stroke: 1px black) or (text-stroke: 1px black) {
+			text-shadow: none;
+			-webkit-text-stroke: 0.6px $iabh-white;
+			text-stroke: 0.6px $iabh-white;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $iabh-teal;
+		color: $iabh-white;
+		text-decoration: none;
+
+		i {
+			color: $iabh-teal;
+		}
+	}
+}
+
+// ---- Responsive tweaks -----------------------------------------------
+@media (max-width: 767.98px) {
+	.navbar-brand .navbar-logo img,
+	.navbar-brand .navbar-logo-svg svg {
+		width: 140px !important;
+		height: auto !important;
+		max-height: none !important;
+	}
+
+	.navigator-toggle {
+		min-width: 0; // let it shrink on mobile
+		padding: 0.45rem 0.9rem;
+		// font-size handled responsively by the body-font mixin above
+	}
+
+	.navigator-toggle span,
+	.navigator-toggle {
+		white-space: nowrap;
+	}
+
+	.call-btn {
+		width: 36px;
+		height: 36px;
+		border-radius: 9px;
+	}
+
+	.site-header-actions {
+		gap: 8px;
+	}
+
+	#wrapper-navbar .top-navbar-overlay .container {
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+}
