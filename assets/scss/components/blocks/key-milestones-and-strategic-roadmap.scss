@@ -11,8 +11,6 @@
   --kmsr-edge: 80px;
 
   @media (min-width: 1440px) {
-    // At this breakpoint .container has no padding, just a centered
-    // max-width — the "gutter" is the auto margin on either side.
     --kmsr-edge: calc((100vw - 1000px) / 2);
   }
 
@@ -20,30 +18,36 @@
     --kmsr-edge: 30px;
   }
 
-  .header h2 {
-    font-family: Montserrat;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px;
-    background: linear-gradient(90deg, #1e4252 0%, #4a92a2 80.37%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-right: 60px;
+  .header {
     width: 296px;
     @media (max-width: $vp-tabletLandscape) {
       width: auto;
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 40px;
-      font-size: 22px;
-      line-height: 32px;
     }
+    h2 {
+      font-family: Montserrat;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      background: linear-gradient(90deg, #1e4252 0%, #4a92a2 80.37%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-right: 60px;
 
-    @media (max-width: $vp-mobileLandscape) {
-      font-size: 20px;
-      line-height: 30px;
+      @media (max-width: $vp-tabletLandscape) {
+        width: auto;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-size: 22px;
+        line-height: 32px;
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 
@@ -161,9 +165,9 @@
     // Mobile only: full-bleed, no gutter at all.
     // Tablet now falls through to width: calc(100% - var(--kmsr-edge))
     // above, so it keeps following the container's right gutter.
-    @media (max-width: $vp-mobileLandscape) {
-      width: 100%;
-    }
+    // @media (max-width: $vp-mobileLandscape) {
+    //   width: 100%;
+    // }
 
     &__thumb {
       position: absolute;
@@ -193,21 +197,35 @@
     flex-shrink: 0;
     background-color: $white;
     overflow: hidden;
+
     padding: 35px 30px;
     width: 543px;
     border-radius: 20px;
-    border: 1.2px solid var(--accent-black-charcoal-30, rgba(33, 33, 33, 0.30));
+    border: 1.2px solid var(--accent-black-charcoal-30, rgba(33, 33, 33, 0.3));
     background: #fff;
+    &:last-child {
+      margin-right: 220px;
+    }
 
     @media (max-width: $vp-tabletLandscape) {
       padding: 30px 20px;
       width: 420px;
       height: 482px;
+      &:last-child {
+        margin-right: 80px;
+      }
     }
 
     @media (max-width: $vp-mobileLandscape) {
-      width: 100%;
+      width: 330px;
       padding: 30px 20px;
+      &:last-child {
+        margin-right: 30px;
+      }
+    }
+
+    @media (max-width: 330px) {
+      width: 260px;
     }
 
     &__image {
@@ -217,12 +235,14 @@
       overflow: hidden;
 
       img {
+        position: absolute;
+        inset: 0;
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 10px;
-        pointer-events: none; // avoid native image drag interfering with drag-scroll
+        pointer-events: none;
       }
 
       &::after {
@@ -236,11 +256,13 @@
         );
         pointer-events: none;
       }
+
       @media (max-width: $vp-tabletLandscape) {
         height: 200px;
       }
 
       @media (max-width: $vp-mobileLandscape) {
+        aspect-ratio: unset;
         height: 220px;
       }
     }
@@ -390,8 +412,6 @@
             font-size: 12px;
             line-height: 22px;
           }
-
-    
         }
       }
       .icon {
@@ -422,14 +442,6 @@
     }
 
     &--past {
-      // .item__image::after {
-      //   background: linear-gradient(
-      //     180deg,
-      //     rgba($grey, 0.55) 0%,
-      //     rgba($dark-sapphire, 0.45) 100%
-      //   );
-      // }
-
       .item__badge {
         background: var(--Primary-Dull-Sea-Blue, #4a92a2);
         padding: 7px 15px;
@@ -445,10 +457,7 @@
     padding: 0;
   }
 
-  // Tablet only: shrink the container itself by 80px (not padding),
-  // so it works regardless of box-sizing. This pulls .events-scrollbar's
-  // width: 100% in with it, landing 80px short of the true edge.
-  @media (min-width: $vp-mobileLandscape) and (max-width: $vp-tabletLandscape) {
+  @media (max-width: $vp-tabletLandscape) {
     width: calc(100% - 80px);
   }
 }
