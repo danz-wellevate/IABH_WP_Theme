@@ -213,8 +213,8 @@ html {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	border-radius: 10px;
 	background-color: $iabh-teal;
 	border: 2px solid $iabh-white;
@@ -261,36 +261,66 @@ html {
 
 // ---- Responsive tweaks -----------------------------------------------
 @media (max-width: 767.98px) {
+	.inner-wrapper-navbar {
+		gap: 0.4rem;
+	}
+
 	.navbar-brand .navbar-logo img,
 	.navbar-brand .navbar-logo-svg svg {
-		width: 140px !important;
+		width: 100px !important;
 		height: auto !important;
 		max-height: none !important;
 	}
 
 	.navigator-toggle {
-		min-width: 0; 
-		padding: 0.45rem 0.9rem;
-	
+		min-width: 0 !important;
+		width: auto;
+		height: 32px;
+		padding: 0 8px !important;
+		border-radius: 6px !important;
+
+		.navigator-toggle-label {
+			font-size: 0.7rem;
+			margin-right: 6px;
+		}
 	}
 
-	.navigator-toggle span,
-	.navigator-toggle {
-		white-space: nowrap;
+	.navigator-caret {
+		width: 6px;
+		height: 4px;
+	}
+
+	.navigator-menu-wrap {
+		min-width: 0 !important;
+		border-radius: 0 0 10px 10px;
+		padding: 0.5rem 0;
+	}
+
+	.navigator-dropdown .navigator-menu {
+		li {
+			a {
+				font-size: 0.9rem !important;
+				padding: 0.7rem 8px !important; // matches .navigator-toggle's left padding so text lines up flush with "Introduction"
+				margin: 0 !important;
+				border-radius: 0 !important; // flush edges like the Figma design
+			}
+		}
+	}
+
+	.navigator-dropdown.is-open .navigator-toggle {
+		border-radius: 6px 6px 0 0 !important;
 	}
 
 	.call-btn {
-		width: 36px;
-		height: 36px;
-		border-radius: 9px;
+		width: 42px;
+		height: 42px;
+		border-radius: 6px;
+		flex-shrink: 0;
 	}
 
 	.site-header-actions {
-		gap: 8px;
-	}
-
-	#wrapper-navbar .top-navbar-overlay .container {
-		padding-left: 1rem !important;
-		padding-right: 1rem !important;
+		gap: 4px;
+		flex-shrink: 0;
+		align-items: center;
 	}
 }
