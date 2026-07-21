@@ -1,0 +1,55 @@
+/* Paragraph Block Styles */
+.block--custom-layout__paragraph {
+  padding: 40px 0;
+  @media (max-width: $vp-tabletLandscape) {
+    padding: 30px 0;
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @media (max-width: $vp-tabletLandscape) {
+      gap: 20px;
+    }
+  }
+
+  .header h2 {
+    color: var(--Primary-Dull-Sea-Blue, #4a92a2);
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 145.455% */
+    @media (max-width: $vp-tabletLandscape) {
+      font-size: 16px;
+    }
+  }
+
+  .description {
+    color: var(--Accent-Black-Charcoal, #212121);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+
+    @media (max-width: $vp-tabletLandscape) {
+      font-size: 12px;
+    }
+
+    a {
+      color: #646464;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  }
+}
