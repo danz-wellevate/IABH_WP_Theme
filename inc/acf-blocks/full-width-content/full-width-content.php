@@ -47,7 +47,9 @@ if ($background_image_mobile) {
             if (!$single_text) continue;
           ?>
             <li class="key-points__item">
-              <span class="key-points__icon" aria-hidden="true"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M6.2001 8.6001L7.8001 10.2001L11.0001 7.0001M16.6001 8.6001C16.6001 13.0184 13.0184 16.6001 8.6001 16.6001C4.18182 16.6001 0.600098 13.0184 0.600098 8.6001C0.600098 4.18182 4.18182 0.600098 8.6001 0.600098C13.0184 0.600098 16.6001 4.18182 16.6001 8.6001Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               <span class="key-points__text"><?= esc_html($single_text) ?></span>
             </li>
           <?php endwhile; ?>

@@ -11,7 +11,7 @@ a {
 body, html {
     margin: 0;
     padding: 0;
-    // may inalis lang dito.
+    font-family: "Montserrat", sans-serif;
 
     #smooth-wrapper {
         width: 100%;
@@ -22,7 +22,7 @@ body, html {
 
                 @media (max-width: $vp-tabletLandscape) {
                     padding-top: 90px;
-                    padding-left: 0; //badtrip talagaaaa
+                    padding-left: 0;
                 }
 
                 @media (max-width: $vp-mobileLandscape) {
