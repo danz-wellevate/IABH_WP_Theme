@@ -1,4 +1,112 @@
 /* Partnerships Block Styles */
 .block--custom-layout__partnerships {
   padding: 100px 0;
+
+  h2 {
+    @include typography(26px, 700, 36px, $font-primary);
+    color: $dark-sapphire;
+    margin: 0 0 40px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      @include typography(20px, 700, 30px, $font-primary);
+    }
+  }
+
+  .inner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &:first-child {
+      align-items: center;
+    }
+  }
+
+  .col {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+
+    .header {
+      margin-bottom: 20px;
+
+      h3 {
+        @include typography(18px, 700, 26px, $font-primary);
+        color: $pacific-blue;
+        margin: 0;
+      }
+    }
+
+    .partner-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .box-item {
+      display: flex;
+      align-items: stretch;
+      min-height: 90px;
+      border: 1px solid $light-grey;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .title {
+        display: flex;
+        align-items: center;
+        flex: 0 0 42%;
+        padding: 16px 20px;
+        background-color: $blue-diane;
+        color: $white;
+        @include typography(14px, 700, 20px, $font-primary);
+      }
+
+      .image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 24px;
+        background-color: $white;
+
+        img {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 50px;
+        }
+      }
+
+      @media (max-width: $vp-mobileLandscape) {
+        flex-direction: column;
+        min-height: 0;
+
+        .title {
+          flex: none;
+          width: 100%;
+        }
+
+        .image {
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+
+    @media (max-width: $vp-tabletPortrait) {
+      margin-top: 40px;
+    }
+  }
 }
