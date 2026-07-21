@@ -23,7 +23,7 @@ $objectives = get_field('objectives');
     <!-- Block Content -->
      <div class="inner-container">
       <div class="col">
-        <h2 class="header"><?= esc_html($header) ?></h2>
+        <h2 class="header"><?= $header ?></h2>
       </div>
       <div class="col">
         <div class="content">
