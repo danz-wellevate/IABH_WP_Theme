@@ -1,1 +1,119 @@
 // _footer.scss
+
+.footer-wrapper {
+    background-color: $blue-diane;
+    margin-top: 100px;
+    overflow: hidden;
+
+    .footer-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 48px 0 40px;
+
+        @media (max-width: $vp-tabletPortrait) {
+            flex-direction: column;
+            gap: 32px;
+            padding: 40px 0 32px;
+        }
+    }
+
+    // ─── Brand / Logo ───────────────────────────────────────────────
+    .footer-brand {
+        flex-shrink: 0;
+
+        .footer-logo img {
+            display: block;
+            max-width: 180px;
+            height: auto;
+
+            @media (max-width: $vp-mobileLandscape) {
+                max-width: 150px;
+            }
+        }
+    }
+
+    // ─── Contact Info ───────────────────────────────────────────────
+    .footer-contact {
+        flex: 1;
+        max-width: 720px;
+
+        @media (max-width: $vp-tabletPortrait) {
+            max-width: 100%;
+        }
+    }
+
+    .footer-contact-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        color: $white;
+        @include typography(16px, 700, 1.3, $font-primary);
+
+        .footer-contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            background-color: $pacific-blue;
+            border-radius: 6px;
+
+            svg {
+                width: 14px;
+                height: 14px;
+                fill: $white;
+            }
+        }
+    }
+
+    .footer-contact-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        @media (max-width: $vp-tabletPortrait) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $vp-mobileLandscape) {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    .footer-contact-col {
+        color: $white;
+        @include typography(14px, 400, 1.6, $font-primary);
+
+        a {
+            color: $white;
+            text-decoration: none;
+            transition: color 0.25s ease;
+
+            &:hover {
+                color: $pacific-blue;
+            }
+        }
+    }
+
+    // ─── Bottom Bar ──────────────────────────────────────────────────
+    .footer-bottom {
+        border-top: 1px solid rgba($white, 0.15);
+        padding: 20px 0;
+    }
+
+    .footer-legal-link {
+        color: rgba($white, 0.7);
+        text-decoration: none;
+        @include typography(14px, 400, 1.4, $font-primary);
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

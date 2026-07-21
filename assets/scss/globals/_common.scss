@@ -33,15 +33,6 @@ body, html {
     }
 
 
-    .site {
-        display: flex;
-        flex-direction: row;
-
-        .main-content {
-            flex: 1 1 auto;
-            min-width: 0;
-        }
-    }
 }
 
 ul {
@@ -142,8 +133,9 @@ img.lazyloaded {
     //padding: 0 100px;
 
     @media (min-width: 1440px) {
-        max-width: 1000px;
+        max-width: 1440px;
         margin: 0 auto;
+        padding: 0 90px;
     }
 
     @media (max-width: 1440px) {
