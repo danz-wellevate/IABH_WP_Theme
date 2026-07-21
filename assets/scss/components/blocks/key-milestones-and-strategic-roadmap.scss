@@ -393,6 +393,7 @@
         border: 1px solid var(--Primary-Dull-Sea-Blue, #4a92a2);
         padding: 8px 20px;
         border-radius: 100px;
+        margin-top: auto;
         @media (max-width: $vp-tabletLandscape) {
           padding: 7px 30px;
           gap: 15px;
@@ -424,6 +425,7 @@
     }
 
     &__announcement {
+      margin-top: auto;
       display: flex;
       align-items: center;
       gap: 8px;
