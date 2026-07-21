@@ -40,7 +40,7 @@ $header = get_field('header');
                   $button_type = get_sub_field('button_type');
                   $button_value = $button_type['value'] ?? '';
                   $button_label = $button_type['label'] ?? '';
-                  $link = get_sub_field('link');
+                  $cta_link = get_sub_field('cta_link');
                   $image_overlay = get_sub_field('image_overlay');
                   ?>
                   <div class="item item--<?= esc_attr($status_value) ?>">
@@ -83,7 +83,8 @@ $header = get_field('header');
                       <?php elseif ($button_value) : ?>
                        <a
                           class="item__button <?= ('save-date' === $button_value) ? 'item__button--save-date' : ''; ?>"
-                          href="<?= esc_url($link ?: '#') ?>"
+                          href="<?= esc_url($cta_link['url'] ?? '#') ?>"
+                          target="<?= esc_attr($cta_link['target'] ?: '_self') ?>"
                         >
                           <?php if ('save-date' === $button_value) : ?>
                             <span class="save-date-label"><?= esc_html($button_label) ?></span>

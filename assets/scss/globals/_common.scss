@@ -190,7 +190,7 @@ img.lazyloaded {
     }
 
     &--transparent {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: transparent;
         border: 1px solid $dark-sapphire;
         color: $dark-sapphire;
@@ -210,7 +210,7 @@ img.lazyloaded {
     }
 
     &--stroked-white {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: transparent;
         border: 1px solid $white;
         color: $white;
@@ -231,7 +231,7 @@ img.lazyloaded {
     }
 
     &--solid {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: #00A4C3;
         border: none;
         color: $white;
