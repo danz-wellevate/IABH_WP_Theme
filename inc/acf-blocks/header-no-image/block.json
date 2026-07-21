@@ -1,0 +1,26 @@
+{
+  "name": "acf/header-no-image",
+  "title": "Header No Image",
+  "description": "Header No Image block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "header-no-image"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/header-no-image/header-no-image.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/header-no-image/preview.jpg"
+      }
+    }
+  }
+}
