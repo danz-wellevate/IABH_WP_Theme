@@ -18,13 +18,13 @@ $description = get_field('paragraph_description');
 <div class="block--custom-layout <?= $class_name ?>" <?= $anchor_id ?> style="background-color: <?= esc_attr($bgColor) ?>;">
   <div class="container">
       <?php if ($header) : ?>
-        <div class="header">
+        <div class="header-paragraph">
           <h2><?= esc_html($header) ?></h2>
         </div>
       <?php endif; ?>
 
       <?php if ($description) : ?>
-        <div class="description">
+        <div class="description-paragraph">
           <?= $description; ?>
         </div>
       <?php endif; ?>
