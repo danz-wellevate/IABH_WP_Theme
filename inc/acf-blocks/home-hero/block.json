@@ -1,0 +1,26 @@
+{
+  "name": "acf/home-hero",
+  "title": "Home Hero",
+  "description": "Home Hero block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "home-hero"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/home-hero/home-hero.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/home-hero/preview.jpg"
+      }
+    }
+  }
+}

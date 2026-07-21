@@ -1,0 +1,26 @@
+{
+  "name": "acf/key-milestones-and-strategic-roadmap",
+  "title": "Key Milestones And Strategic Roadmap",
+  "description": "Key Milestones And Strategic Roadmap block.",
+  "category": "custom-layout",
+  "icon": "layout",
+  "keywords": [
+    "key-milestones-and-strategic-roadmap"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "inc/acf-blocks/key-milestones-and-strategic-roadmap/key-milestones-and-strategic-roadmap.php"
+  },
+  "align": "full",
+  "supports": {
+    "anchor": true
+  },
+  "example": {
+    "attributes": {
+      "mode": "preview",
+      "data": {
+        "preview_image": "inc/acf-blocks/key-milestones-and-strategic-roadmap/preview.jpg"
+      }
+    }
+  }
+}
