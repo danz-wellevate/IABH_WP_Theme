@@ -25,7 +25,7 @@ if ($bg_image_mobile) {
 ?>
 
 <div class="block--custom-layout <?= $class_name ?>" <?= $anchor_id ?><?php if ($hero_style) : ?> style="<?= esc_attr($hero_style) ?>"<?php endif; ?>>
-  <div class="container">
+
     <!-- Block Content -->
     <div class="inner-container">
       <?php if ($header) : ?>
@@ -38,5 +38,5 @@ if ($bg_image_mobile) {
         </div>
       <?php endif; ?>
     </div>
-  </div>
+
 </div>

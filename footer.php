@@ -49,11 +49,11 @@ $cta_link          = get_field( 'cta_link', 'option' );
 
 				<div class="footer-contact-columns">
 					<?php if ( $main_information ) : ?>
-						<div class="footer-contact-col"><?php echo nl2br( esc_html( $main_information ) ); ?></div>
+						<div class="footer-contact-col"><?php echo nl2br(  $main_information ); ?></div>
 					<?php endif; ?>
 
 					<?php if ( $main_address ) : ?>
-						<div class="footer-contact-col"><?php echo nl2br( esc_html( $main_address ) ); ?></div>
+						<div class="footer-contact-col"><?php echo nl2br( $main_address ); ?></div>
 					<?php endif; ?>
 
 					<?php if ( $footer_email ) : ?>
@@ -64,19 +64,20 @@ $cta_link          = get_field( 'cta_link', 'option' );
 				</div>
 			</div>
 		</div>
-
-		<?php if ( $cta_link ) :
-			$cta_url    = $cta_link['url'];
-			$cta_title  = $cta_link['title'];
-			$cta_target = ! empty( $cta_link['target'] ) ? $cta_link['target'] : '_self';
-			?>
-			<div class="footer-bottom">
+	</div>
+	<?php if ( $cta_link ) :
+		$cta_url    = $cta_link['url'];
+		$cta_title  = $cta_link['title'];
+		$cta_target = ! empty( $cta_link['target'] ) ? $cta_link['target'] : '_self';
+		?>
+		<div class="footer-bottom">
+			<div class="container">
 				<a class="footer-legal-link" href="<?php echo esc_url( $cta_url ); ?>" target="<?php echo esc_attr( $cta_target ); ?>">
 					<?php echo esc_html( $cta_title ); ?>
 				</a>
 			</div>
-		<?php endif; ?>
-	</div>
+		</div>
+	<?php endif; ?>
 </footer>
 
 </div><!-- .site #page -->
