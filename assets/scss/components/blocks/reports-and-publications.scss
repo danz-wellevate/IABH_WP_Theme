@@ -133,10 +133,10 @@
 
   .image {
     position: relative;
-    flex: 0 0 140px;
-    width: 140px;
+    flex: 0 0 200px;
+    width: 200px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 
     img {
       position: absolute;
