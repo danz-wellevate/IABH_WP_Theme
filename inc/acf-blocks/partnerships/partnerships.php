@@ -15,6 +15,7 @@ $bgColor = get_field('partnerships_background_color');
 $header = get_field('header');
 $first_column_title = get_field('first_column_title');
 $secondary_column_title = get_field('secondary_column_title');
+$cta_link = get_field('cta_link');
 ?>
 
 <div class="block--custom-layout <?= $class_name ?>" <?= $anchor_id ?> style="background-color: <?= esc_attr($bgColor) ?>;">
@@ -77,5 +78,17 @@ $secondary_column_title = get_field('secondary_column_title');
         </div>
       </div>
      </div>
+
+     <?php if ($cta_link) :
+       $link_url = $cta_link['url'];
+       $link_title = $cta_link['title'] ?: 'Learn more';
+       $link_target = $cta_link['target'] ?: '_self';
+     ?>
+       <div class="cta-wrapper">
+         <a class="btn btn--transparent" href="<?= esc_url($link_url) ?>" target="<?= esc_attr($link_target) ?>">
+           <?= esc_html($link_title) ?>
+         </a>
+       </div>
+     <?php endif; ?>
   </div>
 </div>

@@ -1,4 +1,50 @@
 /* Home Hero Block Styles */
 .block--custom-layout__home-hero {
-  padding: 100px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 160px 0;
+  background-color: $dark-sapphire;
+  background-image: var(--bg-image-desktop);
+  color: $white;
+
+  @include bg-img-props;
+  @include padding-top;
+  @include padding-bottom;
+
+  @media (max-width: $vp-mobileLandscape) {
+    background-image: var(--bg-image-mobile, var(--bg-image-desktop));
+    min-height: 420px;
+  }
+
+  .inner-container {
+    max-width: 720px;
+  }
+
+  h1 {
+    @include typography(48px, 700, 56px, $font-primary);
+    margin: 0 0 20px;
+    color: $white;
+
+    @media (max-width: $vp-tabletPortrait) {
+      @include typography(34px, 700, 42px, $font-primary);
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+      @include typography(26px, 700, 34px, $font-primary);
+    }
+  }
+
+  .sub-paragraph {
+    color: rgba($white, 0.85);
+
+    p {
+      margin: 0 0 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
