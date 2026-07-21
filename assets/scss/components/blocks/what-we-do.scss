@@ -17,7 +17,6 @@
 
     .header {
       @include typography(32px, 700, 1.3, $font-primary);
-      color: $dark-sapphire;
       margin: 0;
 
       @media (max-width: $vp-tabletPortrait) {

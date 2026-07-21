@@ -35,6 +35,13 @@ body, html {
 
 }
 
+.header {
+    background: var(--Primary-Gradient, linear-gradient(90deg, #1E4252 0%, #4A92A2 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
