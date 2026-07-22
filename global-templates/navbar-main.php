@@ -73,16 +73,16 @@
 			</div>
 		</div>
 
-		<!-- Call Button -->
+		<!-- Email Button -->
 		<a
-			href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $iabh_phone_number ) ); ?>"
+			href="mailto:<?php echo esc_attr( $iabh_email_address ); ?>"
 			class="call-btn"
-			aria-label="<?php echo esc_attr( sprintf( __( 'Call us at %s', 'understrap' ), $iabh_phone_display ) ); ?>"
-			title="<?php echo esc_attr( $iabh_phone_display ); ?>"
+			aria-label="<?php echo esc_attr( sprintf( __( 'Email us at %s', 'understrap' ), $iabh_email_address ) ); ?>"
+			title="<?php echo esc_attr( $iabh_email_address ); ?>"
 		>
 			<svg class="call-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-	<path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"
-		stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+	<rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+	<path d="M3.5 6.5L12 13L20.5 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 		</a>
 
@@ -91,7 +91,6 @@
 </div>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
 	document.querySelectorAll('[data-navigator-dropdown]').forEach(function (wrap) {
 		var toggle      = wrap.querySelector('[data-navigator-toggle]');
@@ -111,9 +110,29 @@ document.addEventListener('DOMContentLoaded', function () {
 			toggle.setAttribute('aria-expanded', 'true');
 		}
 
-		function setLabel(text) {
-			labelEl.textContent = text;
+		var currentFullLabel = defaultLabel;
+		var mobileQuery = window.matchMedia('(max-width: 767.98px)');
+
+		function truncateLabel(text) {
+			if (!mobileQuery.matches) return text; // full text on desktop/tablet
+
+			var words = text.trim().split(/\s+/);
+			if (words.length <= 2) return text; // short enough already
+
+			return words.slice(0, 2).join(' ') + '...';
 		}
+
+		function setLabel(text) {
+			currentFullLabel = text;
+			labelEl.textContent = truncateLabel(text);
+			labelEl.setAttribute('title', text); // full text still available on hover/long-press
+		}
+
+		// Re-truncate (or restore) the label if the viewport crosses the mobile breakpoint,
+		// e.g. rotating a tablet or resizing a browser window.
+		mobileQuery.addEventListener('change', function () {
+			setLabel(currentFullLabel);
+		});
 
 		toggle.addEventListener('click', function (e) {
 			e.stopPropagation();
