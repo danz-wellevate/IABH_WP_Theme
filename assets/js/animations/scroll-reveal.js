@@ -4,49 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const blocks = document.querySelectorAll('.block--custom-layout');
     if (!blocks.length) return;
 
-    // Tag + class scoped on purpose — a bare ".header" also matches the
-    // wrapper divs around repeater item titles (e.g. what-we-do's
-    // objective items), which are not section headings.
-    const headingSelector = 'h1, h2.header, h3.card-header, .header-paragraph h2';
+    // ".header" and "h1" are the section headings (home-hero uses a bare
+    // h1 with no ".header" class); the rest are the body-copy / text
+    // wrappers used across the ACF blocks (subheadings, WYSIWYG
+    // paragraphs, item descriptions).
+    const headingSelector = '.header, h1';
 
-    // Paragraph / body-copy wrappers (the actual "p tags" from ACF WYSIWYG fields).
-    const paragraphSelector = '.sub-paragraph, .card-paragraph, .paragraph, .description-paragraph, .description';
+    // ".description" is intentionally left out — it only ever appears
+    // nested inside a ".legends-repeater .item" box below, and animating
+    // both the item and its own child fights the parent's opacity tween
+    // (a child can't render above its parent's opacity), so the text pops
+    // in instead of fading with the box.
+    const textSelector = '.sub-paragraph, .card-paragraph, .paragraph, .description-paragraph, .subheader';
 
-    // Cards / boxes / repeater items.
-    const boxSelector = '.key-points, .card-cta, .box-item, .legends-repeater .item, .report-repeater .item, .events-repeater .item, .partner-wrapper, .cta-wrapper, .illustration';
+    // Cards / boxes / repeater items — the "column" style content across
+    // the blocks (partner logos, report cards, event cards, objectives).
+    const boxSelector = '.box-item, .legends-repeater .item, .report-repeater .item, .events-repeater .item, .illustration, .key-points, .card-cta, .cta-wrapper';
 
     blocks.forEach((block) => {
         const heading = block.querySelector(headingSelector);
-        const paragraphs = block.querySelectorAll(paragraphSelector);
-        const boxes = block.querySelectorAll(boxSelector);
+        const textEls = block.querySelectorAll(textSelector);
+        const boxEls = block.querySelectorAll(boxSelector);
 
-        let inner = null;
+        if (!heading && !textEls.length && !boxEls.length) return;
 
-        if (heading) {
-            const mask = document.createElement('span');
-            mask.className = 'curtain-reveal';
-
-            inner = document.createElement('span');
-            inner.className = 'curtain-reveal__inner';
-
-            while (heading.firstChild) {
-                inner.appendChild(heading.firstChild);
-            }
-
-            mask.appendChild(inner);
-            heading.appendChild(mask);
-
-            gsap.set(inner, { yPercent: 110, opacity: 0 });
-        }
-
-        if (paragraphs.length) gsap.set(paragraphs, { opacity: 0, y: 30 });
-        if (boxes.length) gsap.set(boxes, { opacity: 0, y: 30 });
-
-        if (!inner && !paragraphs.length && !boxes.length) return;
+        if (heading) gsap.set(heading, { opacity: 0, y: 30 });
+        if (textEls.length) gsap.set(textEls, { opacity: 0, y: 30 });
+        if (boxEls.length) gsap.set(boxEls, { opacity: 0, y: 30 });
 
         // One timeline per block, triggered once as the block enters the
-        // viewport, so the heading, paragraphs, and boxes all fade up in
-        // sync rather than firing off independent scroll positions.
+        // viewport, so the heading, its body text, and its boxes fade up
+        // together as a sequence instead of each firing at its own
+        // scroll position.
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: block,
@@ -55,22 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        if (inner) {
-            tl.to(inner, { yPercent: 0, opacity: 1, duration: 1, ease: 'power4.out' });
+        if (heading) {
+            tl.to(heading, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
         }
 
-        if (paragraphs.length) {
-            tl.to(paragraphs, {
+        if (textEls.length) {
+            tl.to(textEls, {
                 opacity: 1,
                 y: 0,
                 duration: 0.8,
                 ease: 'power3.out',
                 stagger: 0.1
-            }, inner ? '-=0.6' : 0);
+            }, heading ? '-=0.5' : 0);
         }
 
-        if (boxes.length) {
-            tl.to(boxes, {
+        if (boxEls.length) {
+            tl.to(boxEls, {
                 opacity: 1,
                 y: 0,
                 duration: 0.8,

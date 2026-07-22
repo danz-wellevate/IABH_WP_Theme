@@ -186,7 +186,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			var currentActiveId = null;
 
-			var observer = new IntersectionObserver(function (entries) {
+			// Named so the resize handler below can rebuild the observer with
+			// the same logic — IntersectionObserver instances don't expose
+			// their callback (there's no such thing as observer.callback), so
+			// relying on that to reuse it silently created a no-op observer
+			// after every resize and killed the scroll-spy from then on.
+			function handleSectionIntersections(entries) {
 				entries.forEach(function (entry) {
 					var match = sectionLinks.find(function (s) { return s.el === entry.target; });
 					if (!match) return;
@@ -214,7 +219,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					wrap.removeAttribute('data-navigator-active');
 					sectionLinks.forEach(function (s) { s.link.classList.remove('is-active'); });
 				}
-			}, {
+			}
+
+			var observer = new IntersectionObserver(handleSectionIntersections, {
 				root: null,
 				rootMargin: topMargin + 'px 0px ' + bottomMargin + 'px 0px',
 				threshold: 0
@@ -228,13 +235,12 @@ document.addEventListener('DOMContentLoaded', function () {
 				topMargin    = -(headerHeight + 10);
 				bottomMargin = -(Math.max(window.innerHeight - headerHeight - 10 - 150, 0));
 				observer.disconnect();
-				var newObserver = new IntersectionObserver(observer.callback || function(){}, {
+				observer = new IntersectionObserver(handleSectionIntersections, {
 					root: null,
 					rootMargin: topMargin + 'px 0px ' + bottomMargin + 'px 0px',
 					threshold: 0
 				});
-				sectionLinks.forEach(function (s) { newObserver.observe(s.el); });
-				observer = newObserver;
+				sectionLinks.forEach(function (s) { observer.observe(s.el); });
 			});
 
 			// If the page loads with a hash already in the URL, set the label immediately.

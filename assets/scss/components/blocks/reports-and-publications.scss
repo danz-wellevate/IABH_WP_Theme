@@ -16,7 +16,7 @@
     align-items: stretch;
     justify-content: space-between;
     gap: 60px;
-    padding: 32px;
+    padding: 35px 30px;
     background-color: $white;
     border: 1px solid $light-grey;
     border-radius: 16px;
@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     @media (max-width: $vp-mobileLandscape) {
       margin-bottom: 10px;
@@ -123,7 +123,6 @@
       content: '\2192';
     }
 
-    margin-top: auto;
 
     &:hover {
       color: $dark-sapphire;

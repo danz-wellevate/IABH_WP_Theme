@@ -43,7 +43,7 @@ $objectives = get_field('objective');
                       <img src="<?= esc_url($icon['url']) ?>" alt="<?= esc_attr($icon['alt']) ?>">
                     <?php endif; ?>
                   </div>
-                  <div class="header">
+                  <div class="subheader">
                     <h3><?= esc_html($item_header) ?></h3>
                   </div>
                   <div class="description">

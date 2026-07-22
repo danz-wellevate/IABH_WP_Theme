@@ -77,14 +77,18 @@
           }
         }
 
-        .header {
+        .subheader {
           flex: 1;
           min-width: 0;
 
           h3 {
-            @include typography(18px, 700, 1.3, $font-primary);
-            color: $pacific-blue;
+            @include typography(22px, 700, 32px, $font-primary);
+            color: $sea-blue;
             margin: 0;
+
+            @media (max-width: $vp-tabletLandscape) {
+              @include typography(16px, 700, 26px, $font-primary);
+            }
           }
         }
 
