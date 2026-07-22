@@ -123,6 +123,11 @@ html {
 	.navigator-toggle-label {
 		text-align: left;
 		flex: 1 1 auto;
+		// Prevent long/short scroll-spy labels from changing the button's size.
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		min-width: 0;
 	}
 
 	.navigator-caret {
@@ -226,6 +231,8 @@ html {
 
 	svg {
 		display: block;
+		width: 26px;
+		height: 26px;
 	}
 
 	i {
@@ -273,8 +280,11 @@ html {
 	}
 
 	.navigator-toggle {
+		// Fixed width so the button no longer grows/shrinks as the scroll-spy
+		// swaps in shorter or longer section labels while scrolling.
 		min-width: 0 !important;
-		width: auto;
+		width: 140px !important;
+		flex: 0 0 140px;
 		height: 32px;
 		padding: 0 8px !important;
 		border-radius: 6px !important;
@@ -282,6 +292,10 @@ html {
 		.navigator-toggle-label {
 			font-size: 0.7rem;
 			margin-right: 6px;
+			// Belt-and-suspenders: keep single line + ellipsis inside the fixed width.
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 
@@ -291,7 +305,10 @@ html {
 	}
 
 	.navigator-menu-wrap {
+		// Menu keeps the same fixed width as the toggle so it doesn't shift either.
+		width: 140px !important;
 		min-width: 0 !important;
+		left: auto;
 		border-radius: 0 0 10px 10px;
 		padding: 0.5rem 0;
 	}
@@ -303,6 +320,10 @@ html {
 				padding: 0.7rem 8px !important; // matches .navigator-toggle's left padding so text lines up flush with "Introduction"
 				margin: 0 !important;
 				border-radius: 0 !important; // flush edges like the Figma design
+				// Long menu item text also stays on one line inside the fixed-width menu.
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -316,6 +337,11 @@ html {
 		height: 42px;
 		border-radius: 6px;
 		flex-shrink: 0;
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
 	}
 
 	.site-header-actions {
