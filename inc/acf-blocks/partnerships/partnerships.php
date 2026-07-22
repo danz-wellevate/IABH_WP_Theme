@@ -37,6 +37,7 @@ $cta_link = get_field('cta_link');
               <?php
               $brand_title = get_sub_field('brand_title');
               $brand_logo = get_sub_field('brand_logo');
+              $brand_website_link = get_sub_field('brand_website_link');
               ?>
               <div class="box-item sea-blue">
                 <div class="title">
@@ -44,7 +45,16 @@ $cta_link = get_field('cta_link');
                 </div>
                 <div class="image">
                   <?php if ($brand_logo) : ?>
-                    <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                    <?php if ($brand_website_link) :
+                      $brand_link_url = $brand_website_link['url'];
+                      $brand_link_target = $brand_website_link['target'] ?: '_self';
+                    ?>
+                      <a href="<?= esc_url($brand_link_url) ?>" target="<?= esc_attr($brand_link_target) ?>">
+                        <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                      </a>
+                    <?php else : ?>
+                      <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                    <?php endif; ?>
                   <?php endif; ?>
                 </div>
               </div>
@@ -62,6 +72,7 @@ $cta_link = get_field('cta_link');
               <?php
               $brand_title = get_sub_field('brand_title');
               $brand_logo = get_sub_field('brand_logo');
+              $brand_website_link = get_sub_field('brand_website_link');
               ?>
               <div class="box-item blue-diane">
                 <div class="title">
@@ -69,7 +80,16 @@ $cta_link = get_field('cta_link');
                 </div>
                 <div class="image">
                   <?php if ($brand_logo) : ?>
-                    <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                    <?php if ($brand_website_link) :
+                      $brand_link_url = $brand_website_link['url'];
+                      $brand_link_target = $brand_website_link['target'] ?: '_self';
+                    ?>
+                      <a href="<?= esc_url($brand_link_url) ?>" target="<?= esc_attr($brand_link_target) ?>">
+                        <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                      </a>
+                    <?php else : ?>
+                      <img src="<?= esc_url($brand_logo['url']) ?>" alt="<?= esc_attr($brand_logo['alt']) ?>">
+                    <?php endif; ?>
                   <?php endif; ?>
                 </div>
               </div>
