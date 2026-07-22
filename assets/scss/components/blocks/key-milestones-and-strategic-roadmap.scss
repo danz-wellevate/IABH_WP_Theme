@@ -170,6 +170,10 @@
       margin-right: 220px;
     }
 
+    &:hover .item__image img {
+      transform: scale(1.1);
+    }
+
     @media (max-width: $vp-tabletLandscape) {
       padding: 30px 20px;
       width: 420px;
@@ -206,6 +210,7 @@
         object-fit: cover;
         border-radius: 10px;
         pointer-events: none;
+        transition: transform 0.4s ease;
       }
 
       &::after {

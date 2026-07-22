@@ -82,6 +82,18 @@ img.lazyloaded {
   transition: opacity 0.3s ease;
 }
 
+// GSAP scroll-reveal — curtain mask for heading reveal animation
+.curtain-reveal {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+
+  &__inner {
+    display: block;
+  }
+}
+
 
 
 
