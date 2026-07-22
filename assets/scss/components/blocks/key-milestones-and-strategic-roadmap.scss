@@ -13,8 +13,15 @@
     --kmsr-edge: 30px;
   }
 
-  .header {
+  .inner-container > .col:first-child {
     width: 296px;
+    @media (max-width: $vp-tabletLandscape) {
+      width: auto;
+    }
+  }
+
+  .header {
+    width: 200px;
     @media (max-width: $vp-tabletLandscape) {
       width: auto;
     }
@@ -198,13 +205,13 @@
     &__image {
       position: relative;
       aspect-ratio: 16 / 9;
-      border-radius: 10px;
       overflow: hidden;
+      border-radius: 10px;
 
-      img {
+      &-featured,
+      &-overlay {
         position: absolute;
         inset: 0;
-        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -222,16 +229,19 @@
           rgba(30, 66, 82, 0.6) 40%,
           rgba(74, 146, 162, 0.6) 100%
         );
-        pointer-events: none;
+        z-index: 2;
       }
 
-      @media (max-width: $vp-tabletLandscape) {
-        height: 200px;
+      &-overlay {
+        z-index: 3;
+        object-fit: cover;
+        opacity: 5%;
+        transform-origin: center;
+        filter: grayscale(1) brightness(3);
       }
 
-      @media (max-width: $vp-mobileLandscape) {
-        aspect-ratio: unset;
-        height: 220px;
+      .item__badge {
+        z-index: 4;
       }
     }
 
@@ -297,7 +307,7 @@
       line-height: 1.3;
       margin: 0 0 12px;
 
-      @media (max-width: $vp-tabletPortrait) {
+      @media (max-width: $vp-tabletLandscape) {
         font-size: 16px;
         margin: 0;
       }
@@ -360,8 +370,8 @@
 
       &.item__button--save-date {
         position: relative;
-        isolation: isolate; 
-        overflow: hidden; 
+        isolation: isolate;
+        overflow: hidden;
 
         background: none;
         background-clip: border-box;

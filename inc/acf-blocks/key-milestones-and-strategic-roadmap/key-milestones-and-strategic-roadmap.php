@@ -13,6 +13,7 @@ if ( ! empty( $block['className'] ) ) {
 // ACF fields
 $bgColor = get_field('key-milestones-and-strategic-roadmap_background_color');
 $header = get_field('header');
+$image_overlay = get_field('image_overlay');
 ?>
 
 <div class="block--custom-layout <?= $class_name ?>" <?= $anchor_id ?> style="background-color: <?= esc_attr($bgColor) ?>;">
@@ -41,22 +42,31 @@ $header = get_field('header');
                   $button_value = $button_type['value'] ?? '';
                   $button_label = $button_type['label'] ?? '';
                   $cta_link = get_sub_field('cta_link');
-                  $image_overlay = get_sub_field('image_overlay');
+                 
                   ?>
                   <div class="item item--<?= esc_attr($status_value) ?>">
-                    <div class="item__image">
-                      <?php if ($status_label) : ?>
-                        <span class="item__badge"><?= esc_html($status_label) ?></span>
-                      <?php endif; ?>
-                      <?php if ($featured_image) : ?>
-                        <div
-                          class="item__image-inner<?= $image_overlay ? ' item__image-inner--overlay' : '' ?>"
-                          style="--bg-image: url('<?= esc_url($featured_image['url']) ?>');"
-                        >
-                          <img src="<?= esc_url($featured_image['url']) ?>" alt="<?= esc_attr($featured_image['alt']) ?>">
-                        </div>
-                      <?php endif; ?>
-                    </div>
+                   <div class="item__image">
+  <?php if ($status_label) : ?>
+    <span class="item__badge"><?= esc_html($status_label) ?></span>
+  <?php endif; ?>
+
+  <?php if ($featured_image) : ?>
+    <img
+      class="item__image-featured"
+      src="<?= esc_url($featured_image['url']) ?>"
+      alt="<?= esc_attr($featured_image['alt']) ?>"
+    >
+  <?php endif; ?>
+
+  <?php if ($image_overlay) : ?>
+    <img
+      class="item__image-overlay"
+      src="<?= esc_url($image_overlay['url']) ?>"
+      alt=""
+      aria-hidden="true"
+    >
+  <?php endif; ?>
+</div>
                     <div class="item__body">
                       <?php if ($date) : ?>
                         <div class="item__date">
