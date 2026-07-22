@@ -20,38 +20,7 @@
     }
   }
 
-  .header {
-    width: 200px;
-    @media (max-width: $vp-tabletLandscape) {
-      width: auto;
-    }
-    h2 {
-      font-family: Montserrat;
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 40px;
-      background: linear-gradient(90deg, #1e4252 0%, #4a92a2 80.37%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-right: 60px;
 
-      @media (max-width: $vp-tabletLandscape) {
-        width: auto;
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 40px;
-        font-size: 22px;
-        line-height: 32px;
-      }
-
-      @media (max-width: $vp-mobileLandscape) {
-        font-size: 20px;
-        line-height: 30px;
-      }
-    }
-  }
 
   .container {
     width: 100%;

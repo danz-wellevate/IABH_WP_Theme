@@ -3,7 +3,6 @@
   @include section-padding-top;
 
   .header {
-    color: $dark-sapphire;
     margin: 0 0 40px;
   }
 
@@ -126,7 +125,11 @@
         flex: 0 0 42%;
         padding: 16px 20px;
         color: $white;
-        @include typography(14px, 400, 20px, $font-primary);
+        @include typography(16px, 400, 20px, $font-primary);
+
+        @media (max-width: $vp-tabletPortrait) {
+          @include typography(12px, 400, 22px, $font-primary);
+        }
       }
 
       .image {

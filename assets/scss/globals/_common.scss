@@ -41,6 +41,8 @@ body, html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    @include typography(30px, 700, 40px, $font-primary);
+
     @media (max-width: $vp-tabletLandscape) {
         font-size: 22px;
     }
@@ -243,7 +245,13 @@ img.lazyloaded {
         &:hover {
             background: $white;
             border: 1px solid $white;
-            color: $dark-sapphire;
+            color: $sea-blue;
+
+            svg {
+                path {
+                    stroke: $sea-blue;
+                }
+            }
         }
     }
 

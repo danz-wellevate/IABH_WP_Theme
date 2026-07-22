@@ -4,18 +4,6 @@
 
   @include both-padding;
 
-  .header {
-    @include typography(32px, 700, 1.3, $font-primary);
-    margin: 0 0 60px;
-
-    @media (max-width: $vp-tabletPortrait) {
-      @include typography(26px, 700, 1.3, $font-primary);
-    }
-
-    @media (max-width: $vp-mobileLandscape) {
-      @include typography(22px, 700, 1.3, $font-primary);
-    }
-  }
 
   .report-repeater {
     display: flex;
