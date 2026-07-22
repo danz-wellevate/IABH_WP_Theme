@@ -1,7 +1,5 @@
 .block--custom-layout__about-section {
-  padding: 100px 0;
- 
-  @include both-padding;
+  @include section-padding-top;
  
 
  

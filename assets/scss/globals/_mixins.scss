@@ -101,3 +101,14 @@
     width: 100%;
   }
 }
+
+
+@mixin section-padding-top {
+  padding-top: 180px;
+  @media (max-width: $vp-tabletPortrait) {
+    padding-top: 120px;
+  }
+  @media (max-width: $vp-mobileLandscape) {
+    padding-top: 100px;
+  }
+}

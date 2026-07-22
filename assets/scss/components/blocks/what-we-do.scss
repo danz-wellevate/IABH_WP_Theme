@@ -1,6 +1,6 @@
 /* What We Do Block Styles */
 .block--custom-layout__what-we-do {
-  padding: 100px 0;
+  @include section-padding-top;
 
   @include both-padding;
 
@@ -57,12 +57,12 @@
       margin-top: 40px;
 
       @media (max-width: $vp-tabletLandscape) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
       }
 
       @media (max-width: $vp-mobileLandscape) {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
 
       .item {
@@ -70,10 +70,10 @@
         flex-wrap: wrap;
         align-items: center;
         column-gap: 12px;
-        row-gap: 12px;
+        row-gap: 30px;
         border: 1px solid $light-grey;
         border-radius: 8px;
-        padding: 24px;
+        padding: 40px 30px;
         background-color: $white;
 
         .marker {

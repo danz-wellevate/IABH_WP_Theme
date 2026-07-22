@@ -2,7 +2,13 @@
 
 .footer-wrapper {
     background-color: $blue-diane;
-    margin-top: 100px;
+    margin-top: 180px;
+    @media (max-width: $vp-tabletPortrait) {
+        margin-top: 120px;
+    }
+    @media (max-width: $vp-mobileLandscape) {
+        margin-top: 100px;
+    }
     overflow: hidden;
 
     .footer-top {

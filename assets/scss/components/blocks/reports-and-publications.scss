@@ -1,6 +1,6 @@
 /* Reports And Publications Block Styles */
 .block--custom-layout__reports-and-publications {
-  padding: 100px 0;
+  @include section-padding-top;
 
   @include both-padding;
 
@@ -33,15 +33,19 @@
     border: 1px solid $light-grey;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    min-height: 260px;
 
     @media (max-width: $vp-mobileLandscape) {
       flex-direction: column;
       gap: 20px;
       padding: 24px;
+      min-height: auto;
     }
   }
 
   .details {
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
   }
 
@@ -74,7 +78,7 @@
       margin: 0;
 
       @media (max-width: $vp-tabletPortrait) {
-        @include typography(15px, 700, 25, $font-primary);
+        @include typography(15px, 700, 25px, $font-primary);
       }
 
       @media (max-width: $vp-mobileLandscape) {
@@ -88,6 +92,10 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
+
+    @media (max-width: $vp-mobileLandscape) {
+      margin-bottom: 10px;
+    }
 
     .author-icon {
       flex: 0 0 auto;
@@ -108,7 +116,7 @@
         color: $grey-charcoal;
 
         @media (max-width: $vp-mobileLandscape) {
-          @include typography(16px, 400, 26px, $font-primary);
+          @include typography(12px, 400, 22px, $font-primary);
         }
       }
     }
@@ -126,6 +134,8 @@
     &::after {
       content: '\2192';
     }
+
+    margin-top: auto;
 
     &:hover {
       color: $dark-sapphire;

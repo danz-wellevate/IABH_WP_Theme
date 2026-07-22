@@ -40,6 +40,14 @@ body, html {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $vp-tabletLandscape) {
+        font-size: 22px;
+    }
+
+    @media (max-width: $vp-mobileLandscape) {
+        font-size: 20px;
+    }
 }
 
 ul {
@@ -210,18 +218,15 @@ img.lazyloaded {
     }
 
     &--stroked-white {
-        @include typography(20px, 400, 30px, $font-primary);
+        @include typography(16px, 400, 26px, $font-primary);
         background: transparent;
         border: 1px solid $white;
         color: $white;
 
         @media (max-width: $vp-tabletPortrait) {
-            @include typography(14px, 700, 24px, $font-primary);
-        }
-
-        @media (max-width: $vp-mobileLandscape) {
             @include typography(12px, 700, 22px, $font-primary);
         }
+
 
         &:hover {
             background: $white;

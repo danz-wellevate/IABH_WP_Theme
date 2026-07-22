@@ -1,9 +1,6 @@
 /* Full Width Content Block Styles */
 .block--custom-layout__full-width-content {
-  padding: 100px 0;
-
-  @include padding-top;
-  @include padding-bottom;
+  @include section-padding-top;
 
   .card {
     position: relative;
@@ -23,6 +20,7 @@
     @media (max-width: $vp-mobileLandscape) {
       padding: 35px 25px;
       background-image: var(--bg-image-mobile, var(--bg-image-desktop));
+      justify-content: flex-start;
     }
 
     // &::before {
@@ -42,7 +40,7 @@
   .card-header {
     @include typography(28px, 700, 36px, $font-primary);
     color: $white;
-    margin: 0 0 16px;
+    margin: 0 0 30px;
 
     @media (max-width: $vp-tabletPortrait) {
       @include typography(22px, 700, 30px, $font-primary);
@@ -63,9 +61,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px 40px;
     max-width: 560px;
-    margin: 0 0 32px;
+    margin: 0 0 30px;
 
-    @media (max-width: $vp-mobileLandscape) {
+    
+    @media (max-width: $vp-tabletLandscape) {
       grid-template-columns: 1fr;
     }
 

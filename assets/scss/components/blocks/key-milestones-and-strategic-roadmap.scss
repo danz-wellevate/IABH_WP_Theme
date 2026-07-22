@@ -1,7 +1,6 @@
 /* Key Milestones And Strategic Roadmap Block Styles */
 .block--custom-layout__key-milestones-and-strategic-roadmap {
-  padding: 100px 0;
-  @include both-padding;
+  @include section-padding-top;
 
   overflow-x: hidden;
   --kmsr-edge: 80px;

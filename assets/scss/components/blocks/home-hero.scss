@@ -16,9 +16,15 @@
   @include padding-top;
   @include padding-bottom;
 
+  @media (max-width: $vp-tabletLandscape) {
+    min-height: 600px;
+    padding: 60px 40px;
+    margin: 30px;
+    border-radius: 14px;
+  }
+
   @media (max-width: $vp-mobileLandscape) {
     background-image: var(--bg-image-mobile, var(--bg-image-desktop));
-    min-height: 420px;
   }
 
   .inner-container {
