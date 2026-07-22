@@ -47,6 +47,14 @@ ul {
     padding: 0;
 }
 
+.sea-blue {
+    background-color: $sea-blue;
+}
+
+.blue-diane {
+    background-color: $blue-diane;
+}
+
 // Disable Padding
 .disabled-padding-top {
     padding-top: 0 !important;
@@ -182,7 +190,7 @@ img.lazyloaded {
     }
 
     &--transparent {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: transparent;
         border: 1px solid $dark-sapphire;
         color: $dark-sapphire;
@@ -202,7 +210,7 @@ img.lazyloaded {
     }
 
     &--stroked-white {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: transparent;
         border: 1px solid $white;
         color: $white;
@@ -223,7 +231,7 @@ img.lazyloaded {
     }
 
     &--solid {
-        @include typography(20px, 700, 30px, $font-primary);
+        @include typography(20px, 400, 30px, $font-primary);
         background: #00A4C3;
         border: none;
         color: $white;

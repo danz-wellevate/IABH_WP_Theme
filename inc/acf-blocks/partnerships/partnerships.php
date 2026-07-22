@@ -28,7 +28,7 @@ $cta_link = get_field('cta_link');
 
      <div class="inner-container">
       <div class="col">
-        <div class="header">
+        <div class="subheader">
           <h3><?= esc_html($first_column_title) ?></h3>
         </div>
         <div class="partner-wrapper">
@@ -38,7 +38,7 @@ $cta_link = get_field('cta_link');
               $brand_title = get_sub_field('brand_title');
               $brand_logo = get_sub_field('brand_logo');
               ?>
-              <div class="box-item">
+              <div class="box-item sea-blue">
                 <div class="title">
                   <?= esc_html($brand_title) ?>
                 </div>
@@ -53,7 +53,7 @@ $cta_link = get_field('cta_link');
         </div>
       </div>
       <div class="col">
-        <div class="header">
+        <div class="subheader">
           <h3><?= esc_html($secondary_column_title) ?></h3>
         </div>
         <div class="partner-wrapper">
@@ -63,7 +63,7 @@ $cta_link = get_field('cta_link');
               $brand_title = get_sub_field('brand_title');
               $brand_logo = get_sub_field('brand_logo');
               ?>
-              <div class="box-item">
+              <div class="box-item blue-diane">
                 <div class="title">
                   <?= esc_html($brand_title) ?>
                 </div>
